@@ -111,6 +111,8 @@
   });
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
+    // A cached legacy page script may still attach its previous form handler.
+    event.stopImmediatePropagation();
     if (pending) return;
     clearError();
     if (!form.elements.name.value.trim()) return fail('Заполните поле «Ваше имя».', form.elements.name);
