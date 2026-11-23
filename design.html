@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="icon" href="https://cdn.полайту.com/videos/milli popup/popuplogo.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дизайн - Полайту</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/mobile.css" />
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=109453183", "ym");
+
+    ym(109453183, "init", {
+      ssr: true,
+      webvisor: true,
+      clickmap: true,
+      ecommerce: "dataLayer",
+      referrer: document.referrer,
+      url: location.href,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/109453183" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <div class="page">
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Полайту">
+        <img src="https://cdn.полайту.com/videos/logos/logo-polaitu.png" alt="Полайту" />
+      </a>
+
+      <nav class="main-nav" aria-label="Главная навигация">
+        <div class="nav-improve-wrapper">
+          <a class="main-nav__link main-nav__link--accent nav-improve" href="#" id="improveMenuBtn">Улучшить бизнес</a>
+
+          <div class="improve-dropdown" id="improveDropdown">
+            <a href="video.html" class="improve-dropdown__item">Видео</a>
+            <a href="smm.html" class="improve-dropdown__item">Смм</a>
+            <a href="design.html" class="improve-dropdown__item">Дизайн</a>
+          </div>
+        </div>
+        <a class="main-nav__link nav-home" href="index.html">Главная</a>
+        <a class="main-nav__link nav-about" href="company.html">О компании</a>
+        <div class="nav-contacts-wrapper">
+          <a class="main-nav__link nav-contacts" href="#" id="contactsMenuBtn">Контакты</a>
+          <div class="contacts-dropdown" id="contactsDropdown">
+            <a href="tel:+78432335007" class="contacts-dropdown__phone">7 (843) 233-50-07</a>
+            <div class="contacts-dropdown__socials">
+              <a href="https://t.me/polightyProd" class="contacts-dropdown__social-link"><img
+                  class="contacts-dropdown__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="Telegram" /></a>
+              <a href="https://vk.com/po_lighty" class="contacts-dropdown__social-link"><img
+                  class="contacts-dropdown__social-icon" src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="ВКонтакте" /></a>
+              <a href="https://www.tiktok.com/@polighty.prod?_r=1&_t=ZN-937P9gdpW11"
+                class="contacts-dropdown__social-link"><img class="contacts-dropdown__social-icon"
+                  src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-project-panel">
+        <button class="project-btn" type="button" data-popup-target="calcPopup">
+          <span class="project-btn__label">РАССЧИТАТЬ ПРОЕКТ</span>
+        </button>
+        <div class="header-audit-tab" role="note" aria-label="Бесплатный аудит за 5 минут">
+          <button class="header-audit-tab__close" type="button" aria-label="Закрыть подсказку">
+            <svg class="header-audit-tab__timer" viewBox="0 0 36 36" aria-hidden="true">
+              <circle class="header-audit-tab__timer-track" cx="18" cy="18" r="14"></circle>
+              <circle class="header-audit-tab__timer-circle" cx="18" cy="18" r="14"></circle>
+            </svg>
+            <span class="header-audit-tab__close-icon"></span>
+          </button>
+          <span class="header-audit-tab__line">БЕСПЛАТНЫЙ</span>
+          <span class="header-audit-tab__line">АУДИТ ЗА 5 МИНУТ</span>
+        </div>
+      </div>
+
+      <button class="icon-btn" type="button" aria-label="SVG кнопка">
+        <img class="icon-btn__icon" src="https://cdn.полайту.com/videos/header/button.svg" alt="" />
+      </button>
+          <!-- Бургер Меню (Mobile) -->
+      <button class="burger-btn" type="button" id="burgerBtn" aria-label="Открыть меню">
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобильное меню">
+      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Закрыть меню">&times;</button>
+      <div class="mobile-nav__menu">
+        <a class="mobile-nav__link mobile-nav__link--accent" href="./index.html">Главная</a>
+        <a class="mobile-nav__link" href="./company.html">О компании</a>
+        <div class="mobile-nav__group">
+          <span class="mobile-nav__group-title">Улучшить бизнес</span>
+          <a class="mobile-nav__sub-link" href="./video.html">Видео</a>
+          <a class="mobile-nav__sub-link" href="./smm.html">SMM</a>
+          <a class="mobile-nav__sub-link" href="./design.html">Дизайн</a>
+        </div>
+        <div class="mobile-nav__group">
+          <span class="mobile-nav__group-title">Контакты</span>
+          <a class="mobile-nav__sub-link" href="tel:+78432335007">7 (843) 233-50-07</a>
+          <div class="mobile-nav__socials">
+            <a class="mobile-nav__social" href="https://t.me/polightyProd"><img src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="TG" /></a>
+            <a class="mobile-nav__social" href="https://vk.com/po_lighty"><img src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="VK" /></a>
+            <a class="mobile-nav__social" href="https://www.tiktok.com/@polighty.prod"><img src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" /></a>
+          </div>
+        </div>
+        <button class="mobile-nav__cta" type="button" id="mobileNavCta">РАССЧИТАТЬ ПРОЕКТ</button>
+        <button class="mobile-nav__cta mobile-nav__cta--audit" type="button" id="mobileNavAuditCta">БЕСПЛАТНЫЙ<br>АУДИТ ЗА 5 МИНУТ</button>
+      </div>
+    </nav>
+
+    <section class="design-block" aria-label="Блок дизайна">
+      <img class="design-decor-bighueta" src="https://cdn.полайту.com/videos/cards/bighueta.png" alt="" aria-hidden="true" />
+      <img class="design-decor-zmei" src="https://cdn.полайту.com/videos/cards/zmei.png" alt="" aria-hidden="true" />
+      <img class="design-decor-eshe" src="https://cdn.полайту.com/videos/cards/eshe.png" alt="" aria-hidden="true" />
+      <h1 class="design-main-title">Дизайн</h1>
+      <p class="design-subtitle">Дизайн проекты, которые<br>мы реализовали</p>
+
+      <div class="design-project-card design-project-milli" data-popup-target="milliPopup">
+        <img src="https://cdn.полайту.com/videos/design/МИЛЛИ.png" alt="Милли" class="design-img-default" />
+        <img src="https://cdn.полайту.com/videos/cards/milli club тень.png" alt="Милли Hover" class="design-img-hover" />
+      </div>
+      <div class="design-project-card design-project-starface" data-popup-target="starfacePopup">
+        <img src="https://cdn.полайту.com/videos/design/СТАРФЕЙС.png" alt="Старфейс" class="design-img-default" />
+        <img src="https://cdn.полайту.com/videos/design/starfaces ten.png" alt="Старфейс Hover" class="design-img-hover" />
+      </div>
+      <div class="design-project-card design-project-clip" data-popup-target="forestPopup">
+        <img src="https://cdn.полайту.com/videos/design/Клип+@po_lighty (1)0 (4).png" alt="Форест" class="design-img-default" />
+        <img src="https://cdn.полайту.com/videos/cards/forest тень.png" alt="Forest Hover" class="design-img-hover" />
+      </div>
+      <div class="design-project-card design-project-djakomo" data-popup-target="djakomoPopup">
+        <img src="https://cdn.полайту.com/videos/design/djakomo.png" alt="Djakomo" class="design-img-default" />
+        <img src="https://cdn.полайту.com/videos/cards/giacomo тень.png" alt="Djakomo Hover" class="design-img-hover" />
+      </div>
+
+      <h2 class="design-section-title">
+        Визуальный образ вашего<br>бизнеса <span class="design-accent-text">под ключ</span>
+      </h2>
+
+      <p class="design-desc-text design-desc-1">
+        Работаем под вашу задачу: если нужен брендинг с нуля<br>— сделаем брендинг
+      </p>
+
+      <p class="design-desc-text design-desc-2">
+        Если есть фирстиль и нужны только соцсети<br>— сделаем соцсети
+      </p>
+
+      <ul class="design-features-list">
+        <li>Разбираемся в вашем бизнесе перед стартом</li>
+        <li>Предлагаем концепцию, не просто рисуем</li>
+        <li>1 круг правок включён всегда</li>
+        <li>Все файлы в любом удобном вам формате</li>
+      </ul>
+
+      <button class="design-cta" type="button" data-popup-target="calcPopup">
+        <span class="design-cta__label">1–3 недели / смета фиксируется до старта</span>
+      </button>
+
+      <h2 class="design-stages-title">Этапы работы</h2>
+
+      <div class="design-stage-number design-stage-1">
+        <svg class="design-stage-svg" viewBox="0 0 100 140" overflow="visible">
+          <defs>
+            <mask id="mask-hollow-1">
+              <rect x="-50" y="-50" width="200" height="200" fill="white" />
+              <text class="mask-text" x="0" y="100">1</text>
+            </mask>
+          </defs>
+          <text class="stroke-text" x="0" y="100" mask="url(#mask-hollow-1)">1</text>
+        </svg>
+      </div>
+
+      <h3 class="design-stage-name design-stage-name-1">Бриф и анализ</h3>
+      <p class="design-stage-desc design-stage-desc-1">
+        Разбираемся в задаче, изучаем нишу и конкурентов. Вам не нужно<br>придумывать ТЗ, мы сами задаём правильные
+        вопросы
+      </p>
+
+      <div class="design-stage-number design-stage-2">
+        <svg class="design-stage-svg" viewBox="0 0 100 140" overflow="visible">
+          <defs>
+            <mask id="mask-hollow-2">
+              <rect x="-50" y="-50" width="200" height="200" fill="white" />
+              <text class="mask-text" x="0" y="100">2</text>
+            </mask>
+          </defs>
+          <text class="stroke-text" x="0" y="100" mask="url(#mask-hollow-2)">2</text>
+        </svg>
+      </div>
+
+      <h3 class="design-stage-name design-stage-name-2">Концепция</h3>
+      <p class="design-stage-desc design-stage-desc-2">
+        Предлагаем визуальное направление и эстетику<br>Вы видите идею до того как мы начинаем делать финальные макеты
+      </p>
+
+      <div class="design-stage-number design-stage-3">
+        <svg class="design-stage-svg" viewBox="0 0 100 140" overflow="visible">
+          <defs>
+            <mask id="mask-hollow-3">
+              <rect x="-50" y="-50" width="200" height="200" fill="white" />
+              <text class="mask-text" x="0" y="100">3</text>
+            </mask>
+          </defs>
+          <text class="stroke-text" x="0" y="100" mask="url(#mask-hollow-3)">3</text>
+        </svg>
+      </div>
+
+      <h3 class="design-stage-name design-stage-name-3">Производство</h3>
+      <p class="design-stage-desc design-stage-desc-3">
+        Делаем все материалы по утверждённой концепции<br>Логотип, фирстиль, оформление соцсетей — в зависимости от
+        задачи
+      </p>
+
+      <div class="design-stage-number design-stage-4">
+        <svg class="design-stage-svg" viewBox="0 0 100 140" overflow="visible">
+          <defs>
+            <mask id="mask-hollow-4">
+              <rect x="-50" y="-50" width="200" height="200" fill="white" />
+              <text class="mask-text" x="0" y="100">4</text>
+            </mask>
+          </defs>
+          <text class="stroke-text" x="0" y="100" mask="url(#mask-hollow-4)">4</text>
+        </svg>
+      </div>
+
+      <h3 class="design-stage-name design-stage-name-4">Сдача</h3>
+      <p class="design-stage-desc design-stage-desc-4">
+        Передаём все файлы в удобном вам формате<br>Один круг правок включён в каждый проект
+      </p>
+
+      <div class="design-form-wrapper">
+        <h2 class="sixth-block__title">Оставьте заявку — обсудим<br>задачу и формат</h2>
+        <p class="sixth-block__subtitle">В ближайшее время с вами свяжется<br>наш менеджер</p>
+        <button class="sixth-block__submit" type="submit" form="designContactForm">
+          <span class="sixth-block__submit-label">ОТПРАВИТЬ</span>
+        </button>
+        <form class="sixth-block__form" id="designContactForm" action="https://formspree.io/f/xvznblrl" method="POST">
+          <input type="hidden" name="form_type" value="design_contact_section" />
+          <input class="sixth-block__input" type="text" name="name" placeholder="Ваше имя" required />
+          <input class="sixth-block__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+          <textarea class="sixth-block__textarea" name="message" placeholder="Опишите вашу задачу"></textarea>
+          <label class="sixth-block__consent">
+            <input type="checkbox" class="sixth-block__checkbox" name="privacy_consent" value="accepted" required />
+            <span class="sixth-block__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+                data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+                href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+          </label>
+          <p class="form-status sixth-block__status" data-form-status aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <a href="index.html" class="site-footer__logo-link">
+        <img class="site-footer__logo" src="https://cdn.полайту.com/videos/logos/logo-polaitu.png" alt="Полайту" />
+      </a>
+
+      <div class="site-footer__socials">
+        <a href="https://t.me/polightyProd" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="Telegram" />
+        </a>
+        <a href="https://vk.com/po_lighty" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="ВКонтакте" />
+        </a>
+        <a href="https://www.tiktok.com/@polighty.prod?_r=1&_t=ZN-937P9gdpW11" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" />
+        </a>
+      </div>
+
+      <div class="site-footer__links">
+        <a href="#privacyPolicyPopup" class="site-footer__link" data-popup-target="privacyPolicyPopup">Политика
+          конфиденциальности</a>
+        <a href="#personalDataPopup" class="site-footer__link" data-popup-target="personalDataPopup">Согласие на
+          обработку персональных данных</a>
+      </div>
+    </footer>
+
+    <!-- MILLI POPUP -->
+    <div class="milli-popup" id="milliPopup">
+      <div class="milli-popup__overlay" id="milliPopupOverlay"></div>
+      <div class="milli-popup__content">
+        <button class="milli-popup__close" id="milliPopupClose" aria-label="Закрыть">&times;</button>
+        <div class="milli-popup__logo">
+          <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Milli Logo" />
+        </div>
+        <p class="milli-popup__title">Создание бренда с нуля</p>
+        <p class="milli-popup__subtitle">История нашей работы с Milli Club
+          <br>Покерный клуб-ресторан Korston
+        </p>
+
+        <div class="milli-popup__step-block milli-popup__step-block--1" style="left: 133px; top: 1330px;">
+          <p class="milli-popup__step-number">1</p>
+        </div>
+
+        <div class="milli-popup__step-block milli-popup__step-block--2" style="left: 133px; top: 1738px;">
+          <p class="milli-popup__step-number">2</p>
+        </div>
+
+        <div class="milli-popup__step-block milli-popup__step-block--3" style="left: 133px; top: 1925px; height: 110px;">
+          <p class="milli-popup__step-number">3</p>
+        </div>
+
+        <div class="milli-popup__step-block milli-popup__step-block--4" style="left: 133px; top: 2481px; width: 124px; height: 118px;">
+          <p class="milli-popup__step-number">4</p>
+        </div>
+        <div class="milli-popup__step-block milli-popup__step-block--5" style="left: 144px; top: 3174px; width: 124px; height: 110px;">
+          <p class="milli-popup__step-number">5</p>
+        </div>
+
+        <p class="milli-popup__step-text milli-popup__step-text--5" style="left: 276px; top: 3214px; width: 374px;">
+          К запуску рубрик
+        </p>
+
+        <div class="milli-popup__goals-block"
+          style="position: absolute; left: 269px; top: 1339px; width: 609px; display: flex; flex-direction: column; gap: 15px; z-index: 2;">
+          <h4 class="milli-popup__goals-title" style="position: static;">Цели работы:</h4>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <p class="milli-popup__goals-list-item" style="position: static;">1) Анализ задачи и определение формата
+              реализации</p>
+            <p class="milli-popup__goals-list-item" style="position: static;">2) Разработка муд-борда</p>
+            <p class="milli-popup__goals-list-item" style="position: static;">3) Создание логотипа</p>
+            <p class="milli-popup__goals-list-item" style="position: static;">4) Проработка маркетинговой стратегии и
+              воронки продаж</p>
+            <p class="milli-popup__goals-list-item" style="position: static;">5) Оформление социальных сетей в едином
+              стиле</p>
+            <p class="milli-popup__goals-list-item" style="position: static;">6) Запуск рубрик</p>
+            <p class="milli-popup__goals-list-item" style="position: static;">7) Формирование образа заведения</p>
+          </div>
+        </div>
+
+        <p class="milli-popup__step-text milli-popup__step-text--2" style="left: 269px; top: 1761px; width: 491px;">
+          Собрали муд-борд, как мы видим<br>
+          формат реализации
+        </p>
+
+        <p class="milli-popup__step-text milli-popup__step-text--3" style="left: 269px; top: 1948px; width: 321px;">
+          Сделали несколько концепций логотипа
+        </p>
+
+        <div class="milli-popup__concept-logo milli-popup__concept-logo--3" style="left: 106px; top: 2096px;">
+          <img src="https://cdn.полайту.com/videos/milli popup/millilogo.png" alt="Concept Logo" class="milli-popup__concept-logo-image" />
+        </div>
+
+        <p class="milli-popup__step-text milli-popup__step-text--4" style="left: 265px; top: 2497px; width: 670px;">
+          После проработки маркетинговой стратегии и<br>
+          воронки, мы приступили к оформлению оффлайна и соц.сетей
+        </p>
+
+        <img src="https://cdn.полайту.com/videos/milli popup/colors brand.png" alt="Colors Brand" class="milli-popup__colors-brand milli-popup__colors-brand--4"
+          style="left: 89px; top: 2630px;" />
+        <img src="https://cdn.полайту.com/videos/milli popup/milli gavno.png" alt="Milli Promo" class="milli-popup__gavno milli-popup__gavno--4"
+          style="left: 350px; top: 2627px;" />
+        <img src="https://cdn.полайту.com/videos/milli popup/menu.png" alt="Milli Menu" class="milli-popup__menu-img milli-popup__menu-img--4"
+          style="left: 651px; top: 2630px;" />
+        <img src="https://cdn.полайту.com/videos/milli popup/shapka.png" alt="Milli Shapka" class="milli-popup__shapka-img milli-popup__shapka-img--4"
+          style="left: 438px; top: 2832px;" />
+        <img src="https://cdn.полайту.com/videos/milli popup/fishka1.png" alt="Fishka 1" class="milli-popup__fishka-1"
+          style="left: 305px; top: 2824px;" />
+        <img src="https://cdn.полайту.com/videos/milli popup/fishka2.png" alt="Fishka 2" class="milli-popup__fishka-2"
+          style="left: 357px; top: 2896px;" />
+        <img src="https://cdn.полайту.com/videos/milli popup/fishka 3.png" alt="Fishka 3" class="milli-popup__fishka-3"
+          style="left: 245px; top: 2967px;" />
+        <img src="https://cdn.полайту.com/videos/milli popup/fishka4.png" alt="Fishka 4" class="milli-popup__fishka-4"
+          style="left: 397px; top: 3036px;" />
+
+        <img src="https://cdn.полайту.com/videos/milli popup/milli 5.png" alt="Milli 5" class="milli-popup__milli-5 milli-popup__milli-5--5"
+          style="left: 101px; top: 3309px;" />
+
+        <h4 class="milli-popup__result-title"
+          style="left: 0; top: 4781px; width: 1024px; text-align: center; color: #ffa800; white-space: nowrap;">Как итог
+          нашей работы:</h4>
+        <p class="milli-popup__result-list-item" style="left: 193px; top: 4887px; width: 637px; text-align: center;">—
+          Создали образ заведения и его соц.сети</p>
+        <p class="milli-popup__result-list-item" style="left: 186px; top: 4938px; width: 651px; text-align: center;">—
+          Привлекли более 1.000 человек живой<br>аудитории на запуске в сети и до открытия<br>в оффлайне</p>
+
+        <img src="https://cdn.полайту.com/videos/milli popup/photo_Milli_popup.png" alt="Milli Project Presentation"
+          class="milli-popup__image" />
+      </div>
+    </div>
+
+    <!-- STARFACE POPUP -->
+    <div class="starface-popup" id="starfacePopup">
+      <div class="starface-popup__overlay" id="starfacePopupOverlay"></div>
+      <div class="starface-popup__content">
+        <button class="starface-popup__close" id="starfacePopupClose" aria-label="Закрыть">&times;</button>
+        <div class="starface-popup__logo">
+          <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Starface Logo" />
+        </div>
+        <p class="starface-popup__title">Дизайн соц.сетей</p>
+        <p class="starface-popup__subtitle">История нашей работы с Starfaces
+          <br>Игровой портал
+        </p>
+
+        <div class="starface-popup__sf-logo-container">
+          <img src="https://cdn.полайту.com/videos/starface popup/logo SF.png" alt="Starface Logo SF" />
+        </div>
+
+        <img src="https://cdn.полайту.com/videos/starface popup/karti.png" alt="Karti" class="starface-popup__karti" />
+        <img src="https://cdn.полайту.com/videos/starface popup/siska.png" alt="Siska" class="starface-popup__siska" />
+        <img src="https://cdn.полайту.com/videos/starface popup/mobile starface.png" alt="Mobile Starface" class="starface-popup__mobile" />
+
+        <div class="starface-popup__step-block starface-popup__step-block--1" style="left: 85px; top: 1537px;">
+          <p class="starface-popup__step-number">1</p>
+        </div>
+
+        <div class="starface-popup__step-block starface-popup__step-block--2" style="left: 85px; top: 2013px; height: 107px;">
+          <p class="starface-popup__step-number">2</p>
+        </div>
+
+        <p class="starface-popup__step-text starface-popup__step-text--2" style="left: 221px; top: 2018px; width: 627px;">
+          Полностью погрузились в бизнес клиента: от разработки маркетинговой стратегии<br>
+          до ежедневного участия в операционке
+        </p>
+
+        <div class="starface-popup__step-block starface-popup__step-block--3" style="left: 85px; top: 2205.82px; height: 110px;">
+          <p class="starface-popup__step-number">3</p>
+        </div>
+
+        <p class="starface-popup__step-text starface-popup__step-text--3" style="left: 221px; top: 2206px; width: 653px;">
+          Плотный формат работы:<br>
+          физические встречи каждую неделю, внедрение новых идей, исправление системных ошибок
+        </p>
+
+        <div class="starface-popup__goals-block"
+          style="position: absolute; left: 218px; top: 1565px; width: 608px; display: flex; flex-direction: column; gap: 15px; z-index: 2;">
+          <h4 class="starface-popup__goals-title" style="position: static;">Цели работы:</h4>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <p class="starface-popup__goals-list-item" style="position: static;">1) Замена предыдущего подрядчика</p>
+            <p class="starface-popup__goals-list-item" style="position: static;">2) Полное погружение в операционные
+              процессы клиента</p>
+            <p class="starface-popup__goals-list-item" style="position: static;">3) Разработка и внедрение маркетинговой
+              стратегии</p>
+            <p class="starface-popup__goals-list-item" style="position: static;">4) Еженедельное очное сопровождение</p>
+            <p class="starface-popup__goals-list-item" style="position: static;">5) Выявление и исправление системных
+              ошибок в процессах</p>
+            <p class="starface-popup__goals-list-item" style="position: static;">6) Интеграция в команду клиента как
+              полноценного партнёра, а не внешнего исполнителя</p>
+          </div>
+        </div>
+
+        <div class="starface-popup__video-block">
+          <video autoplay loop muted playsinline>
+            <source src="https://cdn.полайту.com/webvideo/xrap tiser 15sec.webm" type="video/webm" />
+          </video>
+        </div>
+
+        <img src="https://cdn.полайту.com/videos/starface popup/starfacess.png" alt="Starfacess" class="starface-popup__starfacess" />
+
+        <h4 class="starface-popup__result-title"
+          style="left: 0; top: 3913px; width: 1024px; text-align: center; white-space: nowrap; color: #ffa800;">Как итог
+          нашей работы:</h4>
+
+        <p class="starface-popup__result-list-item" style="left: 187px; top: 4010px; width: 649px; text-align: center;">
+          — Стали не просто исполнителями,<br>
+          а частью команды в прямом смысле, освоив даже игру в “храп”<br>
+          ради общего дела
+        </p>
+
+        <!-- User can specify elements here -->
+      </div>
+    </div>
+    <!-- DJAKOMO POPUP -->
+    <div class="djakomo-popup" id="djakomoPopup">
+      <div class="djakomo-popup__overlay" id="djakomoPopupOverlay"></div>
+      <div class="djakomo-popup__content">
+        <button class="djakomo-popup__close" id="djakomoPopupClose" aria-label="Закрыть">&times;</button>
+        <div class="djakomo-popup__logo">
+          <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Logo" />
+        </div>
+
+        <p class="djakomo-popup__title" style="left: 0; width: 1024px; text-align: center;">Дизайн соц.сетей</p>
+        <p class="djakomo-popup__subtitle" style="left: 0; width: 1024px; text-align: center;">История нашей работы с Giacommo
+          <br>Мужской клуб Korston
+        </p>
+
+        <img src="https://cdn.полайту.com/videos/giacomo popup/giacomo1.png" alt="Giacomo 1" class="djakomo-popup__img-1" />
+
+        <div class="djakomo-popup__step-block" style="left: 121px; top: 1385px; height: 104px;">
+          <p class="djakomo-popup__step-number">1</p>
+        </div>
+
+        <div
+          style="position: absolute; left: 258px; top: 1399px; width: 616px; display: flex; flex-direction: column; gap: 10px; z-index: 2;">
+          <h4 class="djakomo-popup__goals-title" style="position: static;">Цели работы:</h4>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <p class="djakomo-popup__goals-list-item" style="position: static;">1) Ребрендинг визуала</p>
+            <p class="djakomo-popup__goals-list-item" style="position: static;">2) Ведение соц.сетей</p>
+            <p class="djakomo-popup__goals-list-item" style="position: static;">3) Поддерживание одной стилистики</p>
+            <p class="djakomo-popup__goals-list-item" style="position: static;">4) Создание афиш и т.п</p>
+            <p class="djakomo-popup__goals-list-item" style="position: static;">5) Съемка и выкладка дополнительного
+              видео-фото контента</p>
+          </div>
+        </div>
+
+        <div class="djakomo-popup__step-block" style="left: 121px; top: 1681px; height: 104px;">
+          <p class="djakomo-popup__step-number">2</p>
+        </div>
+
+        <p class="djakomo-popup__step-text" style="left: 253px; top: 1703px; width: 616px;">
+          Собрали мудборд, чтобы зафиксировать, как видим будущую реализацию бренда
+        </p>
+
+        <div class="djakomo-popup__step-block" style="left: 121px; top: 1846px; height: 110px;">
+          <p class="djakomo-popup__step-number">3</p>
+        </div>
+
+        <p class="djakomo-popup__step-text" style="left: 253px; top: 1869px; width: 627px;">
+          За первые 21 день разработали брендинг<br>и задали вектор развития
+        </p>
+
+        <img src="https://cdn.полайту.com/videos/giacomo popup/giacomo2.png" alt="Giacomo 2" class="djakomo-popup__img-2" />
+
+        <div class="djakomo-popup__step-block" style="left: 121px; top: 2795px; height: 107px;">
+          <p class="djakomo-popup__step-number">4</p>
+        </div>
+
+        <p class="djakomo-popup__step-text" style="left: 257px; top: 2805px; width: 627px;">
+          Разработали визуалы для афиш, которые использовались как в web, так и внутри заведения
+        </p>
+
+        <img src="https://cdn.полайту.com/videos/giacomo popup/giacoma.png" alt="Giacomo 3" class="djakomo-popup__img-3" />
+
+        <h4 class="djakomo-popup__result-title"
+          style="left: 0; top: 4178px; width: 1024px; text-align: center; white-space: nowrap; color: #ffa800;">Как итог
+          нашей работы:</h4>
+
+        <p class="djakomo-popup__result-list-item" style="left: 0; top: 4284px; width: 1024px; text-align: center;">
+          — За первое время привлекли<br>более +500 подписчиков
+        </p>
+
+        <p class="djakomo-popup__result-list-item" style="left: 0; top: 4365px; width: 1024px; text-align: center;">
+          — Увеличили количество заявок на +74%
+        </p>
+
+        <p class="djakomo-popup__result-list-item" style="left: 0; top: 4416px; width: 1024px; text-align: center;">
+          — Усилили ценность заведения в глазах<br>аудитории и повысили его статус
+        </p>
+
+        <!-- User can specify elements here -->
+      </div>
+    </div>
+
+    <!-- FOREST POPUP -->
+    <div class="forest-popup" id="forestPopup">
+      <div class="forest-popup__overlay" id="forestPopupOverlay"></div>
+      <div class="forest-popup__content">
+        <button class="forest-popup__close" id="forestPopupClose" aria-label="Закрыть">&times;</button>
+
+        <div class="forest-popup__logo">
+          <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Forest Logo" />
+        </div>
+        <p class="forest-popup__title" style="left: 0; top: 198px; width: 1024px; text-align: center;">Создание бренда с нуля</p>
+        <p class="forest-popup__subtitle" style="left: 0; top: 253px; width: 1024px; text-align: center;">История нашей работы с Forrest
+          <br>Глэмпинг в Казани
+        </p>
+
+        <img src="https://cdn.полайту.com/videos/forest popup/forest1.png" alt="Forest 1" class="forest-popup__img-1" />
+        <img src="https://cdn.полайту.com/videos/forest popup/forest2.png" alt="Forest 2" class="forest-popup__img-2" />
+        <img src="https://cdn.полайту.com/videos/forest popup/forest3.png" alt="Forest 3" class="forest-popup__img-3" />
+        <img src="https://cdn.полайту.com/videos/forest popup/forest4.png" alt="Forest 4" class="forest-popup__img-4" />
+        <div class="forest-popup__step-block" style="left: 178px; top: 1427.57px; height: 115px;">
+          <p class="forest-popup__step-number">1</p>
+        </div>
+
+        <div
+          style="position: absolute; left: 319px; top: 1447.57px; width: 526px; display: flex; flex-direction: column; gap: 15px; z-index: 2;">
+          <h4 class="forest-popup__goals-title"
+            style="position: static; margin: 0; font-family: 'Bounded', sans-serif; font-size: 24px; font-weight: 700; color: #ffffff;">
+            Цели работы:</h4>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <p class="forest-popup__goals-list-item"
+              style="position: static; margin: 0; font-family: 'Bounded', sans-serif; font-size: 24px; font-weight: 200; color: #ffffff;">
+              1) Создание визуального образа объекта ещё на этапе достройки</p>
+            <p class="forest-popup__goals-list-item"
+              style="position: static; margin: 0; font-family: 'Bounded', sans-serif; font-size: 24px; font-weight: 200; color: #ffffff;">
+              3) Проведение полноценной фотосессии для формирования единой визуальной стилистики</p>
+            <p class="forest-popup__goals-list-item"
+              style="position: static; margin: 0; font-family: 'Bounded', sans-serif; font-size: 24px; font-weight: 200; color: #ffffff;">
+              4) Разработка пакета промо-материалов</p>
+            <p class="forest-popup__goals-list-item"
+              style="position: static; margin: 0; font-family: 'Bounded', sans-serif; font-size: 24px; font-weight: 200; color: #ffffff;">
+              5) Формирование долгосрочного партнёрства с масштабированием на другие направления</p>
+          </div>
+        </div>
+        <div class="forest-popup__step-block" style="left: 178px; top: 1846px; height: 107px;">
+          <p class="forest-popup__step-number">2</p>
+        </div>
+
+        <p class="forest-popup__step-text" style="left: 319px; top: 1853px; width: 532px;">
+          К нам обратились по сарафанному<br>
+          радио — владельцы глэмпинга Forest<br>
+          вышли на нас, когда база отдыха ещё только достраивалась.
+        </p>
+        <div class="forest-popup__step-block" style="left: 178px; top: 2797.82px; height: 110px;">
+          <p class="forest-popup__step-number">3</p>
+        </div>
+
+        <p class="forest-popup__step-text" style="left: 321px; top: 2794px; width: 524px;">
+          Начали с первой серии рилсов: нужно было показать территорию, домики и атмосферу ещё до открытия, чтобы с
+          первых дней привлекать гостей.
+        </p>
+        <div class="forest-popup__step-block" style="left: 140px; top: 4273px; width: 124px; height: 118px;">
+          <p class="forest-popup__step-number">4</p>
+        </div>
+
+        <p class="forest-popup__step-text" style="left: 272px; top: 4282px; width: 628px;">
+          Провели полноценную фотосессию,<br>
+          а затем подготовили пакет промо-материалов — от карточек для соцсетей<br>
+          до макетов для сайта и наружки.
+        </p>
+
+        <h4 class="forest-popup__result-title"
+          style="position: absolute; left: 0; top: 5280px; width: 1024px; margin: 0; color: #ffa800; font-family: 'Bounded', sans-serif; font-size: 39.19px; font-weight: 500; text-align: center; white-space: nowrap;">
+          Как итог нашей работы:</h4>
+
+        <p class="forest-popup__result-list-item"
+          style="position: absolute; left: 273px; top: 5380px; width: 477px; margin: 0; color: #ffffff; font-family: 'Bounded', sans-serif; font-size: 24px; font-weight: 400; text-align: center;">
+          — Так разовый проект перерос в долгосрочное партнёрство</p>
+
+        <p class="forest-popup__result-list-item"
+          style="position: absolute; left: 186px; top: 5467px; width: 651px; margin: 0; color: #ffffff; font-family: 'Bounded', sans-serif; font-size: 24px; font-weight: 400; text-align: center;">
+          — Заказчику настолько понравилась подача и качество съёмки, что мы продолжили сотрудничество</p>
+
+        <!-- User can specify elements here -->
+      </div>
+    </div>
+
+    <!-- CALC POPUP -->
+    <div class="calc-popup" id="calcPopup">
+      <div class="calc-popup__overlay" id="calcPopupOverlay"></div>
+      <div class="calc-popup__content">
+        <button class="calc-popup__close" id="calcPopupClose" aria-label="Закрыть">&times;</button>
+        <div class="calc-popup__logo">
+          <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Логотип" />
+        </div>
+        <p class="calc-popup__subtitle">В ближайшее время с вами<br>свяжется наш менеджер</p>
+        <div class="calc-popup__inner">
+          <form class="calc-popup__form" action="https://formspree.io/f/xvznblrl" method="POST">
+            <input type="hidden" name="form_type" value="design_calc_popup" />
+            <input class="calc-popup__input" type="text" name="name" placeholder="Ваше имя" required />
+            <input class="calc-popup__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+            <input class="calc-popup__input" type="text" name="message" placeholder="Опишите вашу задачу" />
+            <button class="calc-popup__submit" type="submit">ОТПРАВИТЬ</button>
+            <label class="calc-popup__consent">
+              <input type="checkbox" class="calc-popup__checkbox" name="privacy_consent" value="accepted" required />
+              <span class="calc-popup__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+                  data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+                  href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+            </label>
+            <p class="form-status calc-popup__status" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-popup" id="privacyPolicyPopup">
+    <div class="legal-popup__overlay"></div>
+    <div class="legal-popup__content">
+      <button class="legal-popup__close" aria-label="Закрыть">&times;</button>
+      <div class="legal-popup__header">
+        <span class="legal-popup__eyebrow">Документ</span>
+        <h2 class="legal-popup__title">Политика конфиденциальности</h2>
+      </div>
+      <div class="legal-popup__body">
+        <iframe class="legal-popup__frame" title="Политика конфиденциальности"
+          src="https://cdn.полайту.com/documents/Политика-конфиденциальности-.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-popup" id="personalDataPopup">
+    <div class="legal-popup__overlay"></div>
+    <div class="legal-popup__content">
+      <button class="legal-popup__close" aria-label="Закрыть">&times;</button>
+      <div class="legal-popup__header">
+        <span class="legal-popup__eyebrow">Документ</span>
+        <h2 class="legal-popup__title">Согласие на обработку персональных данных</h2>
+      </div>
+      <div class="legal-popup__body">
+        <iframe class="legal-popup__frame" title="Согласие на обработку персональных данных"
+          src="https://cdn.полайту.com/documents/obrabotka.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/header-audit.js"></script>
+  <script src="./js/design.js"></script>
+  <script src="./js/floating-phone.js"></script>
+
+  <script>
+    (function(){
+      var burgerBtn = document.getElementById('burgerBtn');
+      var mobileNav = document.getElementById('mobileNav');
+      var mobileNavClose = document.getElementById('mobileNavClose');
+      var mobileNavCta = document.getElementById('mobileNavCta');
+      var mobileNavAuditCta = document.getElementById('mobileNavAuditCta');
+      function openNav() { if(mobileNav){mobileNav.classList.add('mobile-nav--active'); document.body.style.overflow = 'hidden';} }
+      function closeNav() { if(mobileNav){mobileNav.classList.remove('mobile-nav--active'); document.body.style.overflow = '';} }
+      if (burgerBtn) burgerBtn.addEventListener('click', openNav);
+      if (mobileNavClose) mobileNavClose.addEventListener('click', closeNav);
+      if (mobileNavCta) mobileNavCta.addEventListener('click', function(){ closeNav(); var popup = document.querySelector('[data-popup-target="calcPopup"]'); if(popup) popup.click(); });
+      if (mobileNavAuditCta) mobileNavAuditCta.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        closeNav();
+        window.location.href = './polaitu-checklist.html';
+      }, true);
+      if (mobileNav) mobileNav.addEventListener('click', function(e){ if(e.target===mobileNav) closeNav(); });
+    })();
+  </script>
+</body>
+
+</html>

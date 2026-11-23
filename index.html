@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="icon" href="https://cdn.полайту.com/videos/milli popup/popuplogo.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Главная - Полайту</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/mobile.css" />
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=109453183", "ym");
+
+    ym(109453183, "init", {
+      ssr: true,
+      webvisor: true,
+      clickmap: true,
+      ecommerce: "dataLayer",
+      referrer: document.referrer,
+      url: location.href,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/109453183" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <div class="page">
+    <header class="site-header">
+      <a class="logo" href="#" aria-label="Полайту">
+        <img src="https://cdn.полайту.com/videos/logos/logo-polaitu.png" alt="Полайту" />
+      </a>
+
+      <nav class="main-nav" aria-label="Главная навигация">
+        <div class="nav-improve-wrapper">
+          <a class="main-nav__link nav-improve" href="#" id="improveMenuBtn">Улучшить бизнес</a>
+
+          <div class="improve-dropdown" id="improveDropdown">
+            <a href="video.html" class="improve-dropdown__item">Видео</a>
+            <a href="smm.html" class="improve-dropdown__item">Смм</a>
+            <a href="design.html" class="improve-dropdown__item">Дизайн</a>
+          </div>
+        </div>
+        <a class="main-nav__link main-nav__link--accent nav-home" href="index.html">Главная</a>
+        <a class="main-nav__link nav-about" href="company.html">О компании</a>
+        <div class="nav-contacts-wrapper">
+          <a class="main-nav__link nav-contacts" href="#" id="contactsMenuBtn">Контакты</a>
+          <div class="contacts-dropdown" id="contactsDropdown">
+            <a href="tel:+78432335007" class="contacts-dropdown__phone">7 (843) 233-50-07</a>
+            <div class="contacts-dropdown__socials">
+              <a href="https://t.me/polightyProd" class="contacts-dropdown__social-link"><img
+                  class="contacts-dropdown__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="Telegram" /></a>
+              <a href="https://vk.com/po_lighty" class="contacts-dropdown__social-link"><img
+                  class="contacts-dropdown__social-icon" src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="ВКонтакте" /></a>
+              <a href="https://www.tiktok.com/@polighty.prod?_r=1&_t=ZN-937P9gdpW11"
+                class="contacts-dropdown__social-link"><img class="contacts-dropdown__social-icon"
+                  src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-project-panel">
+        <button class="project-btn" type="button" data-popup-target="calcPopup">
+          <span class="project-btn__label">РАССЧИТАТЬ ПРОЕКТ</span>
+        </button>
+        <div class="header-audit-tab" role="note" aria-label="Бесплатный аудит за 5 минут">
+          <button class="header-audit-tab__close" type="button" aria-label="Закрыть подсказку">
+            <svg class="header-audit-tab__timer" viewBox="0 0 36 36" aria-hidden="true">
+              <circle class="header-audit-tab__timer-track" cx="18" cy="18" r="14"></circle>
+              <circle class="header-audit-tab__timer-circle" cx="18" cy="18" r="14"></circle>
+            </svg>
+            <span class="header-audit-tab__close-icon"></span>
+          </button>
+          <span class="header-audit-tab__line">БЕСПЛАТНЫЙ</span>
+          <span class="header-audit-tab__line">АУДИТ ЗА 5 МИНУТ</span>
+        </div>
+      </div>
+
+      <button class="icon-btn" type="button" aria-label="SVG кнопка">
+        <img class="icon-btn__icon" src="https://cdn.полайту.com/videos/header/button.svg" alt="" />
+      </button>
+      <!-- Бургер Меню (Mobile) -->
+      <button class="burger-btn" type="button" id="burgerBtn" aria-label="Открыть меню">
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобильное меню">
+      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Закрыть меню">&times;</button>
+      <div class="mobile-nav__menu">
+        <a class="mobile-nav__link mobile-nav__link--accent" href="./index.html">Главная</a>
+        <a class="mobile-nav__link" href="./company.html">О компании</a>
+        <div class="mobile-nav__group">
+          <span class="mobile-nav__group-title">Улучшить бизнес</span>
+          <a class="mobile-nav__sub-link" href="./video.html">Видео</a>
+          <a class="mobile-nav__sub-link" href="./smm.html">SMM</a>
+          <a class="mobile-nav__sub-link" href="./design.html">Дизайн</a>
+        </div>
+        <div class="mobile-nav__group">
+          <span class="mobile-nav__group-title">Контакты</span>
+          <a class="mobile-nav__sub-link" href="tel:+78432335007">7 (843) 233-50-07</a>
+          <div class="mobile-nav__socials">
+            <a class="mobile-nav__social" href="https://t.me/polightyProd"><img src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="TG" /></a>
+            <a class="mobile-nav__social" href="https://vk.com/po_lighty"><img src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="VK" /></a>
+            <a class="mobile-nav__social" href="https://www.tiktok.com/@polighty.prod"><img src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" /></a>
+          </div>
+        </div>
+        <button class="mobile-nav__cta" type="button" id="mobileNavCta">РАССЧИТАТЬ ПРОЕКТ</button>
+        <button class="mobile-nav__cta mobile-nav__cta--audit" type="button" id="mobileNavAuditCta">БЕСПЛАТНЫЙ<br>АУДИТ ЗА 5 МИНУТ</button>
+      </div>
+    </nav>
+
+    <section class="video-block" aria-label="Видео блок">
+      <h1 class="hero-title">Ваш визуальный маркетинг</h1>
+      <p class="hero-subtitle">Создаем видео, которое двигает ваш бизнес</p>
+      <button class="hero-cta" type="button" data-popup-target="calcPopup">
+        <span class="hero-cta__label">РАССЧИТАТЬ ВАШ ПРОЕКТ</span>
+      </button>
+      <video class="video-block__media" id="mainVideo1" autoplay muted loop playsinline preload="auto">
+        <source src="https://cdn.полайту.com/webvideo/ШОУРИЛ ГОРИЗОНТ ЗАЛУПА ГОВНО И ТП.webm" type="video/webm" />
+      </video>
+    </section>
+
+    <section class="next-block" aria-label="Следующий блок">
+      <img class="next-block__holo" src="https://cdn.полайту.com/videos/dark-holo-77.png" alt="" />
+      <a href="smm.html" class="next-block__music-wrapper" style="display: block;">
+        <img class="next-block__music" src="https://cdn.полайту.com/videos/cards/music-block-1.png" alt="Музыка" />
+        <img class="next-block__music-hover" src="https://cdn.полайту.com/videos/cards/music-block-hover.png" alt="Музыка Hover" />
+      </a>
+      <a href="video.html" class="next-block__lux-wrapper" style="display: block;">
+        <img class="next-block__lux" src="https://cdn.полайту.com/videos/cards/lux.png" alt="Люкс" />
+        <img class="next-block__lux-hover" src="https://cdn.полайту.com/videos/cards/lux-hover.png" alt="Люкс Hover" />
+      </a>
+      <a href="design.html" class="next-block__card3-wrapper" style="display: block;">
+        <img class="next-block__card3" src="https://cdn.полайту.com/videos/cards/card-3.png" alt="Карточка 3" />
+        <img class="next-block__card3-hover" src="https://cdn.полайту.com/videos/cards/card-3-hover.png" alt="Карточка 3 Hover" />
+      </a>
+      <a href="video.html" class="next-block__card4-wrapper" style="display: block;">
+        <img class="next-block__card4" src="https://cdn.полайту.com/videos/cards/card-4-twins.png" alt="Карточка 4" />
+        <img class="next-block__card4-hover" src="https://cdn.полайту.com/videos/cards/card-4-hover.png" alt="Карточка 4 Hover" />
+      </a>
+      <a href="design.html" class="next-block__card5-wrapper" style="display: block;">
+        <img class="next-block__card5" src="https://cdn.полайту.com/videos/cards/card-5.png" alt="Карточка 5" />
+        <img class="next-block__card5-hover" src="https://cdn.полайту.com/videos/cards/card-5-hover.png" alt="Карточка 5 Hover" />
+      </a>
+      <a href="design.html" class="next-block__card6-wrapper" style="display: block;">
+        <img class="next-block__card6" src="https://cdn.полайту.com/videos/cards/card-6.png" alt="Карточка 6" />
+        <img class="next-block__card6-hover" src="https://cdn.полайту.com/videos/cards/card-6-hover.png" alt="Карточка 6 Hover" />
+      </a>
+      <a href="design.html" class="next-block__card7-wrapper" style="display: block;">
+        <img class="next-block__card7" src="https://cdn.полайту.com/videos/cards/card-7.png" alt="Карточка 7" />
+        <img class="next-block__card7-hover" src="https://cdn.полайту.com/videos/cards/card-7-hover.png" alt="Карточка 7 Hover" />
+      </a>
+      <a href="design.html" class="next-block__card8-wrapper" style="display: block;">
+        <img class="next-block__card8" src="https://cdn.полайту.com/videos/cards/card-8_upscayl_4x_upscayl-standard-4x.png" alt="Карточка 8" />
+        <img class="next-block__card8-hover" src="https://cdn.полайту.com/videos/cards/card-8-hover_upscayl_3x_upscayl-standard-4x.png" alt="Карточка 8 Hover" />
+      </a>
+    </section>
+
+    <section class="third-video-block" aria-label="Третий видео блок">
+      <video class="third-video-block__media" id="mainVideo2" autoplay muted loop playsinline preload="auto">
+        <source src="https://cdn.полайту.com/webvideo/ШОУРИЛ ГОРИЗОНТ ЗАЛУПА ГОВНО И ТП.webm" type="video/webm" />
+      </video>
+
+      <div class="third-video-block__state active" id="quizIntroState">
+        <h2 class="third-title">Пройдите маленький опрос</h2>
+        <p class="third-subtitle">И получите от нас подарок, скидку на наши услуги в 10%</p>
+
+        <button class="third-cta" type="button" id="startInlineQuizBtn">
+          <span class="third-cta__label">НАЧАТЬ ТЕСТ</span>
+        </button>
+      </div>
+
+      <div class="third-video-block__state" id="quizStep1State">
+        <h2 class="inline-quiz__title">1. Выберите, что вам нужно</h2>
+
+        <div class="inline-quiz__options">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q1" value="video">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">видео</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q1" value="design">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">дизайн</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q1" value="smm">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">SMM</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q1" value="dontknow">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Не знаю</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button" id="quizStep1Prev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button" id="quizStep1Next">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 2 -->
+      <div class="third-video-block__state" id="quizStep2State">
+        <h2 class="inline-quiz__title">2. Ваши сроки</h2>
+
+        <div class="inline-quiz__options" style="max-width: 800px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q2" value="less_week">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">меньше недели</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q2" value="1_month">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">1 месяц</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q2" value="1_2_weeks">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">1-2 недели</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q2" value="more_month">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Больше месяца</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q2" value="no_rush">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Не спешу</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button" id="quizStep2Prev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button" id="quizStep2Next">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 3 -->
+      <div class="third-video-block__state" id="quizStep3State">
+        <h2 class="inline-quiz__title">3. Ваш бюджет</h2>
+
+        <div class="inline-quiz__options" style="max-width: 1000px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q3" value="30_70">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">30.000 — 70.000 ₽</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q3" value="70_150">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">70.000 — 150.000 ₽</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q3" value="more_150">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Больше 150.000 ₽</span>
+          </label>
+          <!-- Second row -->
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q3" value="help_estimate">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Нужна помощь с оценкой</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button" id="quizStep3Prev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button" id="quizStep3Next">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 4 (если выбрано Видео) -->
+      <div class="third-video-block__state" id="quizStep4VideoState">
+        <h2 class="inline-quiz__title">4. Какой формат видео ?</h2>
+
+        <div class="inline-quiz__options" style="max-width: 1000px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_video" value="promo">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Рекламный ролик</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_video" value="corporate">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Корпоративное /<br>Имиджевое</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_video" value="report">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Отчетное /<br>Событийное</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_video" value="other">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Другое</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button"
+            id="quizStep4VideoPrev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button"
+            id="quizStep4VideoNext">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 5 (если выбрано Видео) -->
+      <div class="third-video-block__state" id="quizStep5VideoState">
+        <h2 class="inline-quiz__title">5. Нужен монтаж или сценарий?</h2>
+
+        <div class="inline-quiz__options" style="max-width: 1200px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_video" value="full">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Сценарий и монтаж<br>нужны полностью</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_video" value="edit_only">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Сценарий свой,<br>монтаж нужен</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_video" value="shoot_only">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Только съёмка,<br>остальное сами</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button"
+            id="quizStep5VideoPrev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button"
+            id="quizStep5VideoNext">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 4 (если выбрано Дизайн) -->
+      <div class="third-video-block__state" id="quizStep4DesignState">
+        <h2 class="inline-quiz__title">4. Что нужно разработать?</h2>
+
+        <div class="inline-quiz__options" style="max-width: 1000px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_design" value="logo">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Логотип и стиль</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_design" value="social">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Дизайн для соцсетей</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_design" value="polygraphy">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Полиграфия</span>
+          </label>
+          <!-- Second row -->
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_design" value="site">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Сайт или лендинг</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_design" value="other">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Другое</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button"
+            id="quizStep4DesignPrev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button"
+            id="quizStep4DesignNext">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 5 (если выбрано Дизайн) -->
+      <div class="third-video-block__state" id="quizStep5DesignState">
+        <h2 class="inline-quiz__title">5. Есть ли примеры дизайна?</h2>
+
+        <div class="inline-quiz__options" style="max-width: 1000px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_design" value="yes_send">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Да, скину</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_design" value="no_help">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Нет, нужна помощь</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button"
+            id="quizStep5DesignPrev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button"
+            id="quizStep5DesignNext">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 4 (если выбрано SMM) -->
+      <div class="third-video-block__state" id="quizStep4SMMState">
+        <h2 class="inline-quiz__title">4. Какая основная задача?</h2>
+
+        <div class="inline-quiz__options" style="max-width: 1000px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_smm" value="grow">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Увеличить охваты<br>и подписчиков</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_smm" value="sales">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Получать заявки /<br>продажи</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_smm" value="full">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Ведение соцсетей<br>под ключ</span>
+          </label>
+          <!-- Second row -->
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q4_smm" value="other">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Другое</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button"
+            id="quizStep4SMMPrev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button" id="quizStep4SMMNext">следующий</button>
+        </div>
+      </div>
+
+      <!-- Шаг 5 (если выбрано SMM) -->
+      <div class="third-video-block__state" id="quizStep5SMMState">
+        <h2 class="inline-quiz__title">5. Какой формат контента нужен?</h2>
+
+        <div class="inline-quiz__options" style="max-width: 1000px;">
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_smm" value="text">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Текстовые посты</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_smm" value="visuals">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Визуалы (дизайн, фото)</span>
+          </label>
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_smm" value="video">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Видеоролики /<br>Вертикальный контент</span>
+          </label>
+          <!-- Second row -->
+          <label class="inline-quiz__option">
+            <input type="radio" name="inline_quiz_q5_smm" value="all">
+            <span class="inline-quiz__radio-custom"></span>
+            <span class="inline-quiz__option-label">Всё вместе (комплексное ведение)</span>
+          </label>
+        </div>
+
+        <div class="inline-quiz__footer">
+          <button class="inline-quiz__btn inline-quiz__btn--prev" type="button"
+            id="quizStep5SMMPrev">предыдущий</button>
+          <button class="inline-quiz__btn inline-quiz__btn--next" type="button" id="quizStep5SMMNext">следующий</button>
+        </div>
+      </div>
+
+      <!-- Финальный шаг (если "не знаю") -->
+      <div class="third-video-block__state" id="quizFinalDontKnowState" style="background-color: #111111;">
+        <div class="quiz-dontknow-left">
+          <h2 class="quiz-dontknow-title">Вы выбрали "не знаю"<br>— и это отлично</h2>
+          <p class="quiz-dontknow-subtitle">Оставьте всё нам.<br><br>Мы знаем, как сделать проект<br>классным :) Подарок
+            уже ждет вас</p>
+          <button class="inline-quiz__btn quiz-dontknow-submit" type="submit" form="quizDontKnowForm" style="margin-top: 80px;">ОТПРАВИТЬ
+            ЗАЯВКУ</button>
+        </div>
+
+        <div class="quiz-dontknow-right">
+          <form class="quiz-dontknow-form" id="quizDontKnowForm" action="https://formspree.io/f/xykadojw" method="POST" data-include-quiz="true">
+            <input type="hidden" name="form_type" value="quiz_dontknow" />
+            <input class="sixth-block__input" type="text" name="name" placeholder="Ваше имя" required />
+            <input class="sixth-block__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+            <textarea class="sixth-block__textarea" name="message" placeholder="Комментарий"></textarea>
+            <label class="sixth-block__consent" style="margin-top: 10px;">
+              <input type="checkbox" class="sixth-block__checkbox" name="privacy_consent" value="accepted" required />
+              <span class="sixth-block__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+                  data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+                  href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+            </label>
+            <p class="form-status sixth-block__status" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Финальный шаг (обычный) -->
+      <div class="third-video-block__state" id="quizFinalNormalState" style="background-color: #111111;">
+        <div class="quiz-dontknow-left">
+          <h2 class="quiz-dontknow-title">Отличный выбор!</h2>
+          <p class="quiz-dontknow-subtitle">Оставьте всё нам.<br><br>Мы знаем, как сделать проект<br>классным :) Подарок
+            уже ждет вас</p>
+          <button class="inline-quiz__btn quiz-dontknow-submit" type="submit" form="quizNormalForm" style="margin-top: 80px;">ОТПРАВИТЬ
+            ЗАЯВКУ</button>
+        </div>
+
+        <div class="quiz-dontknow-right">
+          <form class="quiz-dontknow-form" id="quizNormalForm" action="https://formspree.io/f/xykadojw" method="POST" data-include-quiz="true">
+            <input type="hidden" name="form_type" value="quiz_normal" />
+            <input class="sixth-block__input" type="text" name="name" placeholder="Ваше имя" required />
+            <input class="sixth-block__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+            <textarea class="sixth-block__textarea" name="message" placeholder="Комментарий"></textarea>
+            <label class="sixth-block__consent" style="margin-top: 10px;">
+              <input type="checkbox" class="sixth-block__checkbox" name="privacy_consent" value="accepted" required />
+              <span class="sixth-block__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+                  data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+                  href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+            </label>
+            <p class="form-status sixth-block__status" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="fourth-block" aria-label="Четвертый блок">
+      <h2 class="fourth-title">Наши клиенты</h2>
+      <div class="fourth-line"></div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__inner">
+          <!-- Первая копия ряда -->
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/enova.png" alt="Enova" style="height: 50px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/tat-expo.png" alt="TAT EXPO"
+            style="width: 220px; height: 140px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/eagle.png" alt="Eagle" style="width: 128px; height: 137px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/2 41.svg" alt="" style="width: 299.58px; height: 103.43px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/luxcore.png" alt="LuxCore"
+            style="width: 134.48px; height: 120.85px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/geely.png" alt="Geely" style="width: 132px; height: 71.53px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/Mask group-3.png" alt=""
+            style="width: 112px; height: 98.51px;" />
+
+          <!-- Вторая копия (дубликат) для бесконечной анимации -->
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/enova.png" alt="Enova" style="height: 50px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/tat-expo.png" alt="TAT EXPO"
+            style="width: 220px; height: 140px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/eagle.png" alt="Eagle" style="width: 128px; height: 137px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/2 41.svg" alt="" style="width: 299.58px; height: 103.43px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/luxcore.png" alt="LuxCore"
+            style="width: 134.48px; height: 120.85px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/geely.png" alt="Geely" style="width: 132px; height: 71.53px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/Mask group-3.png" alt=""
+            style="width: 112px; height: 98.51px;" />
+        </div>
+      </div>
+
+      <div class="marquee-2" aria-hidden="true">
+        <div class="marquee-2__inner">
+          <!-- Первая копия (2 набора) -->
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/giacomo.png" alt="" style="width: 143px; height: 56.33px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/academy.png" alt="" style="width: 269.29px; height: 84.69px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/forest.png" alt="" style="width: 178px; height: 41.91px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/n-logo.png" alt="" style="width: 90px; height: 103.52px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/laker-b.png" alt=""
+            style="width: 107.52px; height: 101.81px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/kukmor.png" alt="" style="width: 164px; height: 33.74px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/priani.png" alt="" style="width: 170.99px; height: 26.32px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/alga.png" alt="" style="width: 154px; height: 65.52px;" />
+
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/giacomo.png" alt="" style="width: 143px; height: 56.33px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/academy.png" alt="" style="width: 269.29px; height: 84.69px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/forest.png" alt="" style="width: 178px; height: 41.91px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/n-logo.png" alt="" style="width: 90px; height: 103.52px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/laker-b.png" alt=""
+            style="width: 107.52px; height: 101.81px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/kukmor.png" alt="" style="width: 164px; height: 33.74px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/priani.png" alt="" style="width: 170.99px; height: 26.32px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/alga.png" alt="" style="width: 154px; height: 65.52px;" />
+
+          <!-- Вторая копия (2 набора) -->
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/giacomo.png" alt="" style="width: 143px; height: 56.33px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/academy.png" alt="" style="width: 269.29px; height: 84.69px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/forest.png" alt="" style="width: 178px; height: 41.91px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/n-logo.png" alt="" style="width: 90px; height: 103.52px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/laker-b.png" alt=""
+            style="width: 107.52px; height: 101.81px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/kukmor.png" alt="" style="width: 164px; height: 33.74px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/priani.png" alt="" style="width: 170.99px; height: 26.32px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/alga.png" alt="" style="width: 154px; height: 65.52px;" />
+
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/giacomo.png" alt="" style="width: 143px; height: 56.33px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/academy.png" alt="" style="width: 269.29px; height: 84.69px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/forest.png" alt="" style="width: 178px; height: 41.91px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/n-logo.png" alt="" style="width: 90px; height: 103.52px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/laker-b.png" alt=""
+            style="width: 107.52px; height: 101.81px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/kukmor.png" alt="" style="width: 164px; height: 33.74px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/priani.png" alt="" style="width: 170.99px; height: 26.32px;" />
+          <img class="marquee__img" src="https://cdn.полайту.com/videos/logos/alga.png" alt="" style="width: 154px; height: 65.52px;" />
+        </div>
+      </div>
+
+      <div class="fourth-line-2"></div>
+    </section>
+
+    <section class="fifth-block" aria-label="Пятый блок">
+      <img class="fifth-block__torus-bg" src="https://cdn.полайту.com/videos/cards/torus-bg.png" alt="" aria-hidden="true" />
+      <img class="fifth-block__torus-bg-2" src="https://cdn.полайту.com/videos/cards/torus-bg-2.png" alt="" aria-hidden="true" />
+      <h2 class="fifth-block__title">Результаты наших клиентов</h2>
+      <div class="fifth-block__cards">
+        <!-- Карточка 1 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag">
+            <span class="glass-card-tag__dot"></span> ВИДЕО
+          </div>
+          <h3 class="glass-card-title">ПРОИЗВОДИТЕЛЬ<br>МЕД.ИНСТРУМЕНТОВ</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Формат</span>
+              <span class="glass-card-stat__value">Презентационный<br>фильм</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок производства</span>
+              <span class="glass-card-stat__value">14 дней</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Показов на сайте</span>
+              <span class="glass-card-stat__value">12.700</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Используется</span>
+              <span class="glass-card-stat__value">Выставки + сайт<br>+ партнеры</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 2 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag">
+            <span class="glass-card-tag__dot"></span> ВИДЕО
+          </div>
+          <h3 class="glass-card-title">СЕТЬ АЗС</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Формат</span>
+              <span class="glass-card-stat__value">Рекламный ролик</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок производства</span>
+              <span class="glass-card-stat__value">8 дней</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Победа<br>в номинации</span>
+              <span class="glass-card-stat__value">Лучшее архитектурно-<br>дизайнерское решение</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Используется</span>
+              <span class="glass-card-stat__value">Всероссийский<br>конкурс АЗС</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 3 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag">
+            <span class="glass-card-tag__dot"></span> ВИДЕО
+          </div>
+          <h3 class="glass-card-title">ФЕДЕРАЛЬНАЯ<br>СЛУЖБА</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Формат</span>
+              <span class="glass-card-stat__value">Отчетный фильм</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок производства</span>
+              <span class="glass-card-stat__value">10 дней</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Показов на сайте</span>
+              <span class="glass-card-stat__value">12.700</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Используется</span>
+              <span class="glass-card-stat__value">Ежегодная<br>коллегия</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 4 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag glass-card-tag--design">
+            <span class="glass-card-tag__dot"></span> ДИЗАЙН
+          </div>
+          <h3 class="glass-card-title">РЕСТОРАН ТАТАРСКОЙ<br>КУХНИ</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Задача</span>
+              <span class="glass-card-stat__value">Ребрендинг</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок производства</span>
+              <span class="glass-card-stat__value">14 дней</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Разработано</span>
+              <span class="glass-card-stat__value">Лого,фирстиль,<br>соцсети</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Средний чек</span>
+              <span class="glass-card-stat__value">+15%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 5 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag glass-card-tag--design">
+            <span class="glass-card-tag__dot"></span> ДИЗАЙН
+          </div>
+          <h3 class="glass-card-title">ФИТНЕС-КЛУБ</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Задача</span>
+              <span class="glass-card-stat__value">Редизайн соцсетей</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок производства</span>
+              <span class="glass-card-stat__value">7 дней</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Подписчики</span>
+              <span class="glass-card-stat__value">+1.200 за месяц</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Средний чек</span>
+              <span class="glass-card-stat__value">+11%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 6 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag glass-card-tag--design">
+            <span class="glass-card-tag__dot"></span> ДИЗАЙН
+          </div>
+          <h3 class="glass-card-title">ПРЕМИАЛЬНЫЙ<br>МУЖСКОЙ КЛУБ</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Задача</span>
+              <span class="glass-card-stat__value">Позиционирование<br>с нуля</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок производства</span>
+              <span class="glass-card-stat__value">21 дней</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Разработано</span>
+              <span class="glass-card-stat__value">Лого,фирстиль,<br>соцсети</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Кол-во заявок</span>
+              <span class="glass-card-stat__value">26%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 7 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag glass-card-tag--smm">
+            <span class="glass-card-tag__dot"></span> СММ
+          </div>
+          <h3 class="glass-card-title">КАФЕ-БАР В ЦЕНТРЕ</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Роликов в месяц</span>
+              <span class="glass-card-stat__value">8 штук</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Удержание аудитории</span>
+              <span class="glass-card-stat__value">87%</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Лучший ролик</span>
+              <span class="glass-card-stat__value">460.000 просмотров</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок работы</span>
+              <span class="glass-card-stat__value">4 месяца</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 8 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag glass-card-tag--smm">
+            <span class="glass-card-tag__dot"></span> СММ
+          </div>
+          <h3 class="glass-card-title">БРЕНД НАТУРАЛЬНОЙ<br>КОСМЕТИКИ</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Роликов в месяц</span>
+              <span class="glass-card-stat__value">10 штук</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Прирост подписчиков</span>
+              <span class="glass-card-stat__value">+17.000 за месяц</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Всего просмотров</span>
+              <span class="glass-card-stat__value">800.000</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок работы</span>
+              <span class="glass-card-stat__value">2 месяца</span>
+            </div>
+          </div>
+        </div>
+        <!-- Карточка 9 -->
+        <div class="fifth-block__glass-card">
+          <div class="glass-card-tag glass-card-tag--smm">
+            <span class="glass-card-tag__dot"></span> СММ
+          </div>
+          <h3 class="glass-card-title">ДИСТРИБЬЮТОР<br>АВТОМОБИЛЕЙ</h3>
+          <div class="glass-card-stats">
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Роликов в месяц</span>
+              <span class="glass-card-stat__value">8 штук</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Удержание аудитории</span>
+              <span class="glass-card-stat__value">81%</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Лучший ролик</span>
+              <span class="glass-card-stat__value">260.000 просмотров</span>
+            </div>
+            <div class="glass-card-stat">
+              <span class="glass-card-stat__label">Срок работы</span>
+              <span class="glass-card-stat__value">3 месяца</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sixth-block" aria-label="Шестой блок">
+      <img class="sixth-block__torus" src="https://cdn.полайту.com/videos/cards/torus-form.png" alt="" aria-hidden="true" />
+      <h2 class="sixth-block__title">Оставьте заявку — обсудим<br>задачу и формат съёмки</h2>
+      <p class="sixth-block__subtitle">В ближайшее время с вами свяжется<br>наш менеджер</p>
+      <button class="sixth-block__submit" type="submit" form="contactForm">
+        <span class="sixth-block__submit-label">ОТПРАВИТЬ</span>
+      </button>
+      <form class="sixth-block__form" id="contactForm" action="https://formspree.io/f/xvznblrl" method="POST">
+        <input type="hidden" name="form_type" value="contact_section" />
+        <input class="sixth-block__input" type="text" name="name" placeholder="Ваше имя" required />
+        <input class="sixth-block__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+        <textarea class="sixth-block__textarea" name="message" placeholder="Опишите вашу задачу"></textarea>
+        <label class="sixth-block__consent">
+          <input type="checkbox" class="sixth-block__checkbox" name="privacy_consent" value="accepted" required />
+          <span class="sixth-block__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+              data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+              href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+        </label>
+        <p class="form-status sixth-block__status" data-form-status aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="seventh-block" aria-label="Седьмой блок">
+      <h2 class="seventh-block__title">Не теряйте нас</h2>
+      <div class="seventh-block__socials">
+        <a href="https://t.me/polightyProd" class="seventh-block__social-link">
+          <img class="seventh-block__social-icon" src="https://cdn.полайту.com/videos/cards/icon-tg.png" alt="Telegram" />
+          <span class="seventh-block__social-name">TG</span>
+        </a>
+        <a href="https://vk.com/po_lighty" class="seventh-block__social-link">
+          <img class="seventh-block__social-icon" src="https://cdn.полайту.com/videos/cards/icon-vk.png" alt="ВКонтакте" />
+          <span class="seventh-block__social-name">VK</span>
+        </a>
+        <a href="https://www.tiktok.com/@polighty.prod?_r=1&_t=ZN-937P9gdpW11" class="seventh-block__social-link">
+          <img class="seventh-block__social-icon" src="https://cdn.полайту.com/videos/cards/icon-tiktok.png" alt="TikTok" />
+          <span class="seventh-block__social-name">TikTok</span>
+        </a>
+      </div>
+      <div class="seventh-block__mockups">
+        <img class="seventh-block__phone" src="https://cdn.полайту.com/videos/cards/mockup-phone.png" alt="Телефон" />
+        <img class="seventh-block__laptop" src="https://cdn.полайту.com/videos/cards/mockup-laptop.png" alt="Ноутбук" />
+      </div>
+      <p class="seventh-block__cta">Оставьте заявку — обсудим задачу и формат съёмки</p>
+      <button class="seventh-block__submit" type="button" data-popup-target="calcPopup">
+        <span class="seventh-block__submit-label">ОСТАВИТЬ ЗАЯВКУ</span>
+      </button>
+    </section>
+
+    <footer class="site-footer">
+      <a href="#" class="site-footer__logo-link">
+        <img class="site-footer__logo" src="https://cdn.полайту.com/videos/logos/logo-polaitu.png" alt="Полайту" />
+      </a>
+
+      <div class="site-footer__socials">
+        <a href="https://t.me/polightyProd" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="Telegram" />
+        </a>
+        <a href="https://vk.com/po_lighty" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="ВКонтакте" />
+        </a>
+        <a href="https://www.tiktok.com/@polighty.prod?_r=1&_t=ZN-937P9gdpW11" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" />
+        </a>
+      </div>
+
+      <div class="site-footer__links">
+        <a href="#privacyPolicyPopup" class="site-footer__link" data-popup-target="privacyPolicyPopup">Политика
+          конфиденциальности</a>
+        <a href="#personalDataPopup" class="site-footer__link" data-popup-target="personalDataPopup">Согласие на
+          обработку персональных данных</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- CALC POPUP -->
+  <div class="calc-popup" id="calcPopup">
+    <div class="calc-popup__overlay" id="calcPopupOverlay"></div>
+    <div class="calc-popup__content">
+      <button class="calc-popup__close" id="calcPopupClose" aria-label="Закрыть">&times;</button>
+      <div class="calc-popup__logo">
+        <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Логотип" />
+      </div>
+      <p class="calc-popup__subtitle">В ближайшее время с вами<br>свяжется наш менеджер</p>
+      <div class="calc-popup__inner">
+        <form class="calc-popup__form" action="https://formspree.io/f/mzdqaorg" method="POST">
+          <input type="hidden" name="form_type" value="calc_popup" />
+          <input class="calc-popup__input" type="text" name="name" placeholder="Ваше имя" required />
+          <input class="calc-popup__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+          <input class="calc-popup__input" type="email" name="email" placeholder="Ваш e-mail" />
+          <input class="calc-popup__input" type="text" name="message" placeholder="Опишите вашу задачу" />
+          <button class="calc-popup__submit" type="submit">ОТПРАВИТЬ</button>
+          <label class="calc-popup__consent">
+            <input type="checkbox" class="calc-popup__checkbox" name="privacy_consent" value="accepted" required />
+            <span class="calc-popup__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+                data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+                href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+          </label>
+          <p class="form-status calc-popup__status" data-form-status aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-popup" id="privacyPolicyPopup">
+    <div class="legal-popup__overlay"></div>
+    <div class="legal-popup__content">
+      <button class="legal-popup__close" aria-label="Закрыть">&times;</button>
+      <div class="legal-popup__header">
+        <span class="legal-popup__eyebrow">Документ</span>
+        <h2 class="legal-popup__title">Политика конфиденциальности</h2>
+      </div>
+      <div class="legal-popup__body">
+        <iframe class="legal-popup__frame" title="Политика конфиденциальности"
+          src="https://cdn.полайту.com/documents/Политика-конфиденциальности-.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-popup" id="personalDataPopup">
+    <div class="legal-popup__overlay"></div>
+    <div class="legal-popup__content">
+      <button class="legal-popup__close" aria-label="Закрыть">&times;</button>
+      <div class="legal-popup__header">
+        <span class="legal-popup__eyebrow">Документ</span>
+        <h2 class="legal-popup__title">Согласие на обработку персональных данных</h2>
+      </div>
+      <div class="legal-popup__body">
+        <iframe class="legal-popup__frame" title="Согласие на обработку персональных данных"
+          src="https://cdn.полайту.com/documents/obrabotka.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/header-audit.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/floating-phone.js"></script>
+
+  <script>
+    (function(){
+      var burgerBtn = document.getElementById('burgerBtn');
+      var mobileNav = document.getElementById('mobileNav');
+      var mobileNavClose = document.getElementById('mobileNavClose');
+      var mobileNavCta = document.getElementById('mobileNavCta');
+      var mobileNavAuditCta = document.getElementById('mobileNavAuditCta');
+      function openNav() { if(mobileNav){mobileNav.classList.add('mobile-nav--active'); document.body.style.overflow = 'hidden';} }
+      function closeNav() { if(mobileNav){mobileNav.classList.remove('mobile-nav--active'); document.body.style.overflow = '';} }
+      if (burgerBtn) burgerBtn.addEventListener('click', openNav);
+      if (mobileNavClose) mobileNavClose.addEventListener('click', closeNav);
+      if (mobileNavCta) mobileNavCta.addEventListener('click', function(){ closeNav(); var popup = document.querySelector('[data-popup-target="calcPopup"]'); if(popup) popup.click(); });
+      function goToChecklist(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+        closeNav();
+        window.location.href = './polaitu-checklist.html';
+      }
+      if (mobileNavAuditCta) mobileNavAuditCta.addEventListener('click', goToChecklist, true);
+      if (mobileNav) mobileNav.addEventListener('click', function(e){ if(e.target===mobileNav) closeNav(); });
+    })();
+  </script>
+</body>
+
+</html>

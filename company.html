@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="icon" href="https://cdn.полайту.com/videos/milli popup/popuplogo.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>О компании - Полайту</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/mobile.css" />
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=109453183", "ym");
+
+    ym(109453183, "init", {
+      ssr: true,
+      webvisor: true,
+      clickmap: true,
+      ecommerce: "dataLayer",
+      referrer: document.referrer,
+      url: location.href,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/109453183" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <div class="page">
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Полайту">
+        <img src="https://cdn.полайту.com/videos/logos/logo-polaitu.png" alt="Полайту" />
+      </a>
+
+      <nav class="main-nav" aria-label="Главная навигация">
+        <div class="nav-improve-wrapper">
+          <a class="main-nav__link nav-improve" href="#" id="improveMenuBtn">Улучшить бизнес</a>
+
+          <div class="improve-dropdown" id="improveDropdown">
+            <a href="video.html" class="improve-dropdown__item">Видео</a>
+            <a href="smm.html" class="improve-dropdown__item">Смм</a>
+            <a href="design.html" class="improve-dropdown__item">Дизайн</a>
+          </div>
+        </div>
+        <a class="main-nav__link nav-home" href="index.html">Главная</a>
+        <a class="main-nav__link main-nav__link--accent nav-about" href="company.html">О компании</a>
+        <div class="nav-contacts-wrapper">
+          <a class="main-nav__link nav-contacts" href="#" id="contactsMenuBtn">Контакты</a>
+          <div class="contacts-dropdown" id="contactsDropdown">
+            <a href="tel:+78432335007" class="contacts-dropdown__phone">7 (843) 233-50-07</a>
+            <div class="contacts-dropdown__socials">
+              <a href="https://t.me/polightyProd" class="contacts-dropdown__social-link"><img
+                  class="contacts-dropdown__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="Telegram" /></a>
+              <a href="https://vk.com/po_lighty" class="contacts-dropdown__social-link"><img
+                  class="contacts-dropdown__social-icon" src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="ВКонтакте" /></a>
+              <a href="https://www.tiktok.com/@polighty.prod?_r=1&_t=ZN-937P9gdpW11"
+                class="contacts-dropdown__social-link"><img class="contacts-dropdown__social-icon"
+                  src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-project-panel">
+        <button class="project-btn" type="button" data-popup-target="calcPopup">
+          <span class="project-btn__label">РАССЧИТАТЬ ПРОЕКТ</span>
+        </button>
+        <div class="header-audit-tab" role="note" aria-label="Бесплатный аудит за 5 минут">
+          <button class="header-audit-tab__close" type="button" aria-label="Закрыть подсказку">
+            <svg class="header-audit-tab__timer" viewBox="0 0 36 36" aria-hidden="true">
+              <circle class="header-audit-tab__timer-track" cx="18" cy="18" r="14"></circle>
+              <circle class="header-audit-tab__timer-circle" cx="18" cy="18" r="14"></circle>
+            </svg>
+            <span class="header-audit-tab__close-icon"></span>
+          </button>
+          <span class="header-audit-tab__line">БЕСПЛАТНЫЙ</span>
+          <span class="header-audit-tab__line">АУДИТ ЗА 5 МИНУТ</span>
+        </div>
+      </div>
+
+      <button class="icon-btn" type="button" aria-label="SVG кнопка">
+        <img class="icon-btn__icon" src="https://cdn.полайту.com/videos/header/button.svg" alt="" />
+      </button>
+      <!-- Бургер Меню (Mobile) -->
+      <button class="burger-btn" type="button" id="burgerBtn" aria-label="Открыть меню">
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобильное меню">
+      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Закрыть меню">&times;</button>
+      <div class="mobile-nav__menu">
+        <a class="mobile-nav__link mobile-nav__link--accent" href="./index.html">Главная</a>
+        <a class="mobile-nav__link" href="./company.html">О компании</a>
+        <div class="mobile-nav__group">
+          <span class="mobile-nav__group-title">Улучшить бизнес</span>
+          <a class="mobile-nav__sub-link" href="./video.html">Видео</a>
+          <a class="mobile-nav__sub-link" href="./smm.html">SMM</a>
+          <a class="mobile-nav__sub-link" href="./design.html">Дизайн</a>
+        </div>
+        <div class="mobile-nav__group">
+          <span class="mobile-nav__group-title">Контакты</span>
+          <a class="mobile-nav__sub-link" href="tel:+78432335007">7 (843) 233-50-07</a>
+          <div class="mobile-nav__socials">
+            <a class="mobile-nav__social" href="https://t.me/polightyProd"><img src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="TG" /></a>
+            <a class="mobile-nav__social" href="https://vk.com/po_lighty"><img src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="VK" /></a>
+            <a class="mobile-nav__social" href="https://www.tiktok.com/@polighty.prod"><img src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" /></a>
+          </div>
+        </div>
+        <button class="mobile-nav__cta" type="button" id="mobileNavCta">РАССЧИТАТЬ ПРОЕКТ</button>
+        <button class="mobile-nav__cta mobile-nav__cta--audit" type="button" id="mobileNavAuditCta">БЕСПЛАТНЫЙ<br>АУДИТ ЗА 5 МИНУТ</button>
+      </div>
+    </nav>
+
+    <section class="company-team-section" aria-label="Блок компании">
+      <div class="company-team-arrows-wrapper"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 635px; z-index: 20; pointer-events: none;">
+        <button class="company-team-arrow prev" type="button" aria-label="Назад" style="pointer-events: auto;"></button>
+        <button class="company-team-arrow next" type="button" aria-label="Вперед"
+          style="pointer-events: auto;"></button>
+      </div>
+
+      <div class="company-team-slider">
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/ДАНИЛ.png" alt="Данил"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/МАТВЕЙ.png" alt="Матвей"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/ЛЕША.png" alt="Леша"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/АЛИНА.png" alt="Алина"></div>
+        <!-- BOGDAN SNAKE TRIGGER: remove this class/data-bogdan-snake-trigger line to disable the click target -->
+        <div class="company-team-slide company-team-slide--bogdan" data-bogdan-snake-trigger="true" role="button" tabindex="0" aria-label="Open Bogdan snake game"><img src="https://cdn.полайту.com/videos/o company/БОГДАН.png" alt="Богдан"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/САНЯ.png" alt="Саня"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/ДИАНА.png" alt="Диана"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/АРТУР.png" alt="Артур"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/ДЗЕН.png" alt="Дзен"></div>
+        <div class="company-team-slide"><img src="https://cdn.полайту.com/videos/o company/ЮРА.png" alt="Юра"></div>
+      </div>
+      <div class="company-team-content-wrapper"
+        style="position: absolute; top: -52px; width: 100%; height: 100%; left: 0;">
+        <img
+          src="https://cdn.полайту.com/videos/o company/lait.png"
+          class="company-lait-photo"
+          alt="Лайт"
+          data-company-mascot-image="true"
+          data-lait-src="https://cdn.полайту.com/videos/o company/lait.png"
+          data-sveta-src="https://cdn.полайту.com/videos/o company/sveta.png">
+        <div class="company-mascot-switcher" data-company-mascot-switcher="true">
+          <p class="company-mascot-switcher__label">Наши маскоты</p>
+          <button class="company-mascot-switcher__button" type="button" data-company-mascot-toggle="true" aria-pressed="false">Лайт</button>
+        </div>
+        <p class="company-label-za">За</p>
+        <p class="company-label-5years">5 лет</p>
+        <p class="company-label-more">мы реализовали более</p>
+        <p class="company-label-300">300</p>
+        <p class="company-label-projects">проектов</p>
+
+        <p class="company-desc-text">Создаём видео, которое работает на рост и узнаваемость компаний<br>— от рекламных
+          кампаний до имиджевых фильмов</p>
+
+        <p class="company-feature-text-1">Мы фиксируем сроки и смету до старта</p>
+
+        <p class="company-feature-text-2">Используем профессиональное оборудование<br>и AI-технологии, держим
+          единый<br>стандарт качества<br>Поэтому к нам возвращаются</p>
+
+        <h2 class="company-reviews-title">ОТЗЫВЫ НАШИХ КЛИЕНТОВ</h2>
+
+        <img src="https://cdn.полайту.com/videos/cards/Star Mixer Abstract Shape.png" alt="Star Mixer"
+          class="company-star-mixer company-floating-anim-1">
+        <img src="https://cdn.полайту.com/videos/cards/eshe1.png" alt="Abstract Shape" class="company-eshe-shape company-floating-anim-2">
+
+        <div class="company-reviews-container">
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/rada_otziv.png" alt="Rada Avatar" class="review-author-avatar">
+            <p class="review-author-name">Кузьмина Рада <br>Владимировна</p>
+            <p class="review-author-title">Учредитель Giacomo Club, NOBLE</p>
+            <p class="review-text-content">—“Продакшн ПОЛАЙТУ выполнил немало работ<br>для клубов «Giacomo Men’s Club» и
+              “NOBLE”.<br>Они заслужили моё клиентское доверие.<br>Все фото и видео были сделаны
+              максимально<br>качественно и
+              по срокам. Всем рекомендую.”</p>
+          </div>
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/daria.png" alt="Daria Avatar" class="review-author-avatar">
+            <p class="review-author-name">Куприянова Дарья<br>Дмитриевна</p>
+            <p class="review-author-title">Директор ООО «СЕРВИС ИНДУСТРИЯ»</p>
+            <p class="review-text-content">—"Всё выполнено в срок и чётко по тз, очень<br>доволны результатом! Многие
+              знакомые попросили<br>контакты операторов.<br>Спасибо большое, за качественную работу!"</p>
+          </div>
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/anna_otziv.png" alt="Anna Avatar" class="review-author-avatar">
+            <p class="review-author-name">Анна Кузьмина</p>
+            <p class="review-author-title review-author-title-up">Блогер, телеведущая, автор проекта<br>“Я могу” для
+              телеканала “Эфир”</p>
+            <p class="review-text-content review-text-12px">—“Работы этих людей вызывают доверие, приятные в
+              общении<br>ребята, которые
+              прекрасно понимают поставленную задачу,<br> и смотрят на любой проект глобально, чётко осознавая, какой
+              ролик<br> для кого делается, сами предлагают идеи и всегда находят способы<br> реализовать любую задумку”
+            </p>
+          </div>
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/karina otziv.png" alt="Empty Avatar" class="review-author-avatar">
+            <p class="review-author-name">Карина</p>
+            <p class="review-author-title">Блогер, контент-криэйтор, 200K+ подписчиков</p>
+            <p class="review-text-content">—Давно искала команду, которой можно доверить<br>съёмку и монтаж без лишних
+              объяснений.<br>ПОЛАЙТУ справились на отлично<br> — всё чисто, в срок.<br> Ролик зашёл на ура. Однозначно
+              продолжим сотрудничество!
+            </p>
+          </div>
+        </div>
+
+        <div class="company-reviews-container-2">
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/alina_otziv.png" alt="Alina Avatar" class="review-author-avatar">
+            <p class="review-author-name">Алина Каликина</p>
+            <p class="review-author-title review-author-title-up">Блогер, модель</p>
+            <p class="review-text-content review-text-12px">—“Практически все фотосессии и видеопроекты были<br> созданы
+              совместно с
+              Полайту) Это невероятно творческие<br> и крутые ребята, которые воплотят любую идею в жизнь.<br> Надеюсь и
+              на дальнейшее сотрудничество с ними!❤️”</p>
+          </div>
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/viktor_otziv.png" alt="Viktor Avatar" class="review-author-avatar">
+            <p class="review-author-name">Щербаков Виктор<br>Дмитриевич</p>
+            <p class="review-author-title">Генеральный Директор ПТО «Медтехника»</p>
+            <p class="review-text-content review-text-12px">— “Участники ПОЛАЙТУ в работе над фильмом<br>для ПТО
+              «Медтехника»
+              проявили ответственность<br>и исполнительность.<br><br>Всё было выполнено чётко по техническому заданию и
+              мы
+              приятно<br>удивились результатом. Ролик был сдан вовремя, а все правки<br>были выполнены в кратчайшие
+              сроки.”</p>
+          </div>
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/lazerb.png" alt="lazerb" class="review-author-avatar">
+            <p class="review-author-name">Лазерная Борода</p>
+            <p class="review-author-title review-author-title-up">Музыкант, создатель бренда Lazer.B </p>
+            <p class="review-text-content">—"Всё на высшем уровне!"</p>
+          </div>
+          <div class="company-review-card">
+            <img src="https://cdn.полайту.com/videos/o company/robert.png" alt="robert" class="review-author-avatar">
+            <p class="review-author-name">Роберт Рашидович</p>
+            <p class="review-author-title review-author-title-up">Основатель бренда “Пряный Мастер”</p>
+            <p class="review-text-content review-text-12px">—“Благодарим команда ПОЛАЙТУ за отличную работу,
+              креативный<br>подход и
+              внимание к деталям.<br><br> Их креативные идеи реально вывели наши соц.сети<br>на новый уровень!”</p>
+          </div>
+        </div>
+
+        <div class="company-faq-block">
+          <h2 class="company-faq-title">Часто задаваемые вопросы</h2>
+          <div class="company-faq-list">
+            <div class="company-faq-item">
+              <p class="company-faq-question"
+                onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">1. Как понять,
+                что вы разберётесь в специфике нашего бизнеса ?</p>
+              <div class="company-faq-answer-wrapper">
+                <p class="company-faq-answer">Перед любым проектом мы проводим короткий созвон <br>— разбираемся в
+                  задаче, аудитории и контексте.</p>
+                <p class="company-faq-answer">Нам не нужно объяснять разницу между имиджевым роликом для госструктуры и
+                  контентом для розничного бренда, мы работали с теми и другими. Если понимаем что задача не наша —
+                  скажем честно.</p>
+              </div>
+            </div>
+
+            <div class="company-faq-item">
+              <p class="company-faq-question"
+                onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">2. Можно
+                заказать только одну услугу<br> — без комплекса ?</p>
+              <div class="company-faq-answer-wrapper">
+                <p class="company-faq-answer">Да. Можно заказать только видео, только дизайн или только контент для
+                  соцсетей. Никаких обязательных пакетов.</p>
+                <p class="company-faq-answer">Многие клиенты начинают с одной задачи<br>— и продолжают работу дальше,
+                  когда
+                  видят результат.</p>
+              </div>
+            </div>
+
+            <div class="company-faq-item">
+              <p class="company-faq-question"
+                onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">3. Как
+                оформляем работу ?</p>
+              <div class="company-faq-answer-wrapper">
+                <p class="company-faq-answer">Официально. Договор, смета, календарный план — всё фиксируем<br>до старта.
+                  Никаких «всплывающих» расходов и пересчётов в процессе.</p>
+              </div>
+            </div>
+
+            <div class="company-faq-item">
+              <p class="company-faq-question"
+                onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">4. Что если
+                результат не совпадёт с тем, что мы представляли ?</p>
+              <div class="company-faq-answer-wrapper">
+                <p class="company-faq-answer">Один цикл правок включён в каждый проект. На сложных<br>проектах
+                  прописываем два. Главное, мы фиксируем ожидания<br> на берегу: концепция, референсы, задача. Это
+                  снимает<br>большинство расхождений ещё до съёмки или сдачи макета.</p>
+              </div>
+            </div>
+
+            <div class="company-faq-item">
+              <p class="company-faq-question"
+                onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">5. Если нет
+                идеи, но понятно что нужен результат ?</p>
+              <div class="company-faq-answer-wrapper">
+                <p class="company-faq-answer">Это нормальная ситуация. Проведём созвон, разберёмся в<br>задаче и
+                  предложим
+                  решение — визуальное, форматное, с<br>примерной сметой. Вам не нужно быть маркетологом
+                  чтобы<br>получить
+                  сильный визуальный образ.</p>
+              </div>
+            </div>
+
+            <div class="company-faq-item">
+              <p class="company-faq-question"
+                onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">6. Вы
+                работаете только в Казани ?</p>
+              <div class="company-faq-answer-wrapper">
+                <p class="company-faq-answer">Базируемся в Казани, здесь основная часть проектов.<br>Выезд в другие
+                  города по договорённости, такой опыт есть.</p>
+              </div>
+            </div>
+          </div>
+          <img src="https://cdn.полайту.com/videos/cards/spiralka.png" alt="Декоративная спираль"
+            class="company-spiralka company-floating-anim-1">
+          <img src="https://cdn.полайту.com/videos/cards/spiralka.png" alt="Декоративная спираль уменьшенная" class="company-spiralka-2">
+        </div>
+    </section>
+
+    <section class="sixth-block" aria-label="Форма заявки">
+      <img class="zavvitulka" src="https://cdn.полайту.com/videos/cards/zavitulka.png" alt="" aria-hidden="true"
+        style="animation: levitate 6s ease-in-out infinite;" />
+      <h2 class="sixth-block__title">Оставьте заявку — обсудим<br>задачу и формат</h2>
+      <p class="sixth-block__subtitle">В ближайшее время с вами свяжется<br>наш менеджер</p>
+      <button class="sixth-block__submit" type="submit" form="companyContactForm">
+        <span class="sixth-block__submit-label">ОТПРАВИТЬ</span>
+      </button>
+      <form class="sixth-block__form" id="companyContactForm" action="https://formspree.io/f/xvznblrl" method="POST">
+        <input type="hidden" name="form_type" value="company_contact_section" />
+        <input class="sixth-block__input" type="text" name="name" placeholder="Ваше имя" required />
+        <input class="sixth-block__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+        <textarea class="sixth-block__textarea" name="message" placeholder="Опишите вашу задачу"></textarea>
+        <label class="sixth-block__consent">
+          <input type="checkbox" class="sixth-block__checkbox" name="privacy_consent" value="accepted" required />
+          <span class="sixth-block__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+              data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+              href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+        </label>
+        <p class="form-status sixth-block__status" data-form-status aria-live="polite"></p>
+      </form>
+    </section>
+
+    <footer class="site-footer">
+      <a href="index.html" class="site-footer__logo-link">
+        <img class="site-footer__logo" src="https://cdn.полайту.com/videos/logos/logo-polaitu.png" alt="Полайту" />
+      </a>
+
+      <div class="site-footer__socials">
+        <a href="https://t.me/polightyProd" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tg.png" alt="Telegram" />
+        </a>
+        <a href="https://vk.com/po_lighty" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-vk.png" alt="ВКонтакте" />
+        </a>
+        <a href="https://www.tiktok.com/@polighty.prod?_r=1&_t=ZN-937P9gdpW11" class="site-footer__social-link">
+          <img class="site-footer__social-icon" src="https://cdn.полайту.com/videos/cards/footer-tiktok.png" alt="TikTok" />
+        </a>
+      </div>
+
+      <div class="site-footer__links">
+        <a href="#privacyPolicyPopup" class="site-footer__link" data-popup-target="privacyPolicyPopup">Политика
+          конфиденциальности</a>
+        <a href="#personalDataPopup" class="site-footer__link" data-popup-target="personalDataPopup">Согласие на
+          обработку персональных данных</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- BOGDAN SNAKE START: delete this whole popup block to remove the easter egg -->
+  <div class="bogdan-snake-popup" id="bogdanSnakePopup" aria-hidden="true">
+    <div class="bogdan-snake-popup__overlay" data-bogdan-snake-close="true"></div>
+    <div class="bogdan-snake-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="bogdanSnakeTitle" tabindex="-1">
+      <button class="bogdan-snake-popup__close" type="button" data-bogdan-snake-close="true" aria-label="Close snake game">&times;</button>
+      <div class="bogdan-snake-popup__header">
+        <p class="bogdan-snake-popup__eyebrow">BOGDAN MODE</p>
+        <h2 class="bogdan-snake-popup__title" id="bogdanSnakeTitle">Snake</h2>
+        <p class="bogdan-snake-popup__hint">Desktop: arrows or WASD. Phone: swipe or tap the pad.</p>
+      </div>
+
+      <div class="bogdan-snake-popup__stats" aria-label="Snake game score panel">
+        <div class="bogdan-snake-popup__stat">
+          <span class="bogdan-snake-popup__stat-label">Score</span>
+          <span class="bogdan-snake-popup__stat-value" data-bogdan-score="current">0</span>
+        </div>
+        <div class="bogdan-snake-popup__stat">
+          <span class="bogdan-snake-popup__stat-label">Best</span>
+          <span class="bogdan-snake-popup__stat-value" data-bogdan-score="best">0</span>
+        </div>
+        <button class="bogdan-snake-popup__restart" type="button" data-bogdan-snake-restart="true">Restart</button>
+      </div>
+
+      <div class="bogdan-snake-popup__game-shell">
+        <div class="bogdan-snake-popup__board-wrap">
+          <canvas class="bogdan-snake-popup__canvas" data-bogdan-snake-canvas="true" width="480" height="480" aria-label="Snake game board"></canvas>
+          <div class="bogdan-snake-popup__message" data-bogdan-snake-message="true">
+            <span class="bogdan-snake-popup__message-title">Tap Restart</span>
+            <span class="bogdan-snake-popup__message-text">Collect points and do not hit the wall.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BOGDAN SNAKE END -->
+
+  <!-- CALC POPUP -->
+  <div class="calc-popup" id="calcPopup">
+    <div class="calc-popup__overlay" id="calcPopupOverlay"></div>
+    <div class="calc-popup__content">
+      <button class="calc-popup__close" id="calcPopupClose" aria-label="Закрыть">&times;</button>
+      <div class="calc-popup__logo">
+        <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Логотип" />
+      </div>
+      <p class="calc-popup__subtitle">В ближайшее время с вами<br>свяжется наш менеджер</p>
+      <div class="calc-popup__inner">
+        <form class="calc-popup__form" action="https://formspree.io/f/xvznblrl" method="POST">
+          <input type="hidden" name="form_type" value="company_calc_popup" />
+          <input class="calc-popup__input" type="text" name="name" placeholder="Ваше имя" required />
+          <input class="calc-popup__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
+          <input class="calc-popup__input" type="text" name="message" placeholder="Опишите вашу задачу" />
+          <button class="calc-popup__submit" type="submit">ОТПРАВИТЬ</button>
+          <label class="calc-popup__consent">
+            <input type="checkbox" class="calc-popup__checkbox" name="privacy_consent" value="accepted" required />
+            <span class="calc-popup__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
+                data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
+                href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+          </label>
+          <p class="form-status calc-popup__status" data-form-status aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-popup" id="privacyPolicyPopup">
+    <div class="legal-popup__overlay"></div>
+    <div class="legal-popup__content">
+      <button class="legal-popup__close" aria-label="Закрыть">&times;</button>
+      <div class="legal-popup__header">
+        <span class="legal-popup__eyebrow">Документ</span>
+        <h2 class="legal-popup__title">Политика конфиденциальности</h2>
+      </div>
+      <div class="legal-popup__body">
+        <iframe class="legal-popup__frame" title="Политика конфиденциальности"
+          src="https://cdn.полайту.com/documents/Политика-конфиденциальности-.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-popup" id="personalDataPopup">
+    <div class="legal-popup__overlay"></div>
+    <div class="legal-popup__content">
+      <button class="legal-popup__close" aria-label="Закрыть">&times;</button>
+      <div class="legal-popup__header">
+        <span class="legal-popup__eyebrow">Документ</span>
+        <h2 class="legal-popup__title">Согласие на обработку персональных данных</h2>
+      </div>
+      <div class="legal-popup__body">
+        <iframe class="legal-popup__frame" title="Согласие на обработку персональных данных"
+          src="https://cdn.полайту.com/documents/obrabotka.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/header-audit.js"></script>
+  <script src="./js/company.js"></script>
+  <script src="./js/floating-phone.js"></script>
+
+  <script>
+    (function(){
+      var burgerBtn = document.getElementById('burgerBtn');
+      var mobileNav = document.getElementById('mobileNav');
+      var mobileNavClose = document.getElementById('mobileNavClose');
+      var mobileNavCta = document.getElementById('mobileNavCta');
+      var mobileNavAuditCta = document.getElementById('mobileNavAuditCta');
+      function openNav() { if(mobileNav){mobileNav.classList.add('mobile-nav--active'); document.body.style.overflow = 'hidden';} }
+      function closeNav() { if(mobileNav){mobileNav.classList.remove('mobile-nav--active'); document.body.style.overflow = '';} }
+      if (burgerBtn) burgerBtn.addEventListener('click', openNav);
+      if (mobileNavClose) mobileNavClose.addEventListener('click', closeNav);
+      if (mobileNavCta) mobileNavCta.addEventListener('click', function(){ closeNav(); var popup = document.querySelector('[data-popup-target="calcPopup"]'); if(popup) popup.click(); });
+      if (mobileNavAuditCta) mobileNavAuditCta.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        closeNav();
+        window.location.href = './polaitu-checklist.html';
+      }, true);
+      if (mobileNav) mobileNav.addEventListener('click', function(e){ if(e.target===mobileNav) closeNav(); });
+    })();
+  </script>
+</body>
+
+</html>
