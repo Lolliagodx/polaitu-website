@@ -8,6 +8,7 @@
   <title>Дизайн - Полайту</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./css/mobile.css" />
+  <link rel="stylesheet" href="./css/project-request.css" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
@@ -649,30 +650,46 @@
     </div>
 
     <!-- CALC POPUP -->
-    <div class="calc-popup" id="calcPopup">
-      <div class="calc-popup__overlay" id="calcPopupOverlay"></div>
-      <div class="calc-popup__content">
-        <button class="calc-popup__close" id="calcPopupClose" aria-label="Закрыть">&times;</button>
-        <div class="calc-popup__logo">
-          <img src="https://cdn.полайту.com/videos/milli popup/popuplogo.png" alt="Логотип" />
-        </div>
-        <p class="calc-popup__subtitle">В ближайшее время с вами<br>свяжется наш менеджер</p>
-        <div class="calc-popup__inner">
-          <form class="calc-popup__form" action="https://formspree.io/f/xvznblrl" method="POST">
-            <input type="hidden" name="form_type" value="design_calc_popup" />
-            <input class="calc-popup__input" type="text" name="name" placeholder="Ваше имя" required />
-            <input class="calc-popup__input" type="tel" name="phone" placeholder="Ваш номер телефона" required />
-            <input class="calc-popup__input" type="text" name="message" placeholder="Опишите вашу задачу" />
-            <button class="calc-popup__submit" type="submit">ОТПРАВИТЬ</button>
-            <label class="calc-popup__consent">
-              <input type="checkbox" class="calc-popup__checkbox" name="privacy_consent" value="accepted" required />
-              <span class="calc-popup__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup"
-                  data-popup-target="personalDataPopup">обработкой персональных данных</a><br>и <a
-                  href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
-            </label>
-            <p class="form-status calc-popup__status" data-form-status aria-live="polite"></p>
-          </form>
-        </div>
+    <div class="project-request" id="calcPopup" data-project-request hidden>
+    <div class="project-request__backdrop" data-request-close></div>
+    <div class="project-request__panel" role="dialog" aria-modal="true" aria-labelledby="projectRequestTitle" tabindex="-1">
+      <img class="project-request__logo" src="./assets/project-form/logo.png" alt="Полайту" width="68" height="68" />
+      <button class="project-request__close" type="button" data-request-close aria-label="Закрыть форму"></button>
+      <div data-request-entry>
+        <h2 class="project-request__title" id="projectRequestTitle">Рассчитать проект</h2>
+        <p class="project-request__intro">Оставьте заявку, и мы бесплатно подготовим рубрики и форматы под ваш бизнес</p>
+        <p class="project-request__note">*Они останутся у вас, даже если снимать будете не с нами</p>
+        <ol class="project-request__steps" aria-label="Как мы работаем">
+          <li class="project-request__step project-request__step--current"><span class="project-request__step-dot">1</span>Заявка</li>
+          <li class="project-request__step"><span class="project-request__step-dot">2</span>Звонок на<br>30 минут</li>
+          <li class="project-request__step"><span class="project-request__step-dot">3</span>Расчёт<br>и рубрики</li>
+        </ol>
+        <form class="project-request__form" data-project-form action="https://formspree.io/f/xvznblrl" method="POST" novalidate>
+          <input type="hidden" name="form_type" value="design_calc_popup" />
+          <div class="project-request__fields">
+            <input class="project-request__field" type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" autocomplete="name" maxlength="150" required />
+            <input class="project-request__field" type="tel" name="phone" placeholder="Ваш номер телефона" aria-label="Ваш номер телефона" autocomplete="tel" inputmode="tel" maxlength="18" required />
+            <input class="project-request__field" type="text" name="website" placeholder="Ссылка на ваш сайт или соц.сети" aria-label="Ссылка на ваш сайт или соц.сети" autocomplete="url" maxlength="1000" />
+            <input class="project-request__field" type="text" name="message" placeholder="Опишите вашу задачу" aria-label="Опишите вашу задачу" maxlength="5000" />
+          </div>
+          <button class="project-request__submit" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+          <label class="project-request__consent">
+            <input class="project-request__checkbox" type="checkbox" name="privacy_consent" value="accepted" required aria-label="Согласие на обработку персональных данных и с политикой конфиденциальности" />
+            <span class="project-request__consent-text">Нажимая кнопку, вы соглашаетесь с <a href="#personalDataPopup" data-popup-target="personalDataPopup">обработкой персональных данных</a> и <a href="#privacyPolicyPopup" data-popup-target="privacyPolicyPopup">политикой конфиденциальности</a></span>
+          </label>
+          <p class="project-request__status" data-request-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="project-request__success" data-request-success hidden>
+        <div class="project-request__success-icon" aria-hidden="true"><span class="project-request__tick"></span></div>
+        <h2 class="project-request__success-title" id="projectRequestSuccessTitle" tabindex="-1">Спасибо, заявка у нас</h2>
+        <p class="project-request__success-copy">Скоро позвоним, чтобы договориться о времени разговора</p>
+        <ol class="project-request__steps" aria-label="Как мы работаем">
+          <li class="project-request__step project-request__step--done"><span class="project-request__step-dot"><span class="project-request__tick" aria-hidden="true"></span><span class="visually-hidden">Готово</span></span>Заявка</li>
+          <li class="project-request__step project-request__step--current"><span class="project-request__step-dot">2</span>Звонок на<br>30 минут</li>
+          <li class="project-request__step"><span class="project-request__step-dot">3</span>Расчёт<br>и рубрики</li>
+        </ol>
+        <a class="project-request__works" data-request-works href="./video.html">ПОСМОТРЕТЬ НАШИ РАБОТЫ</a>
       </div>
     </div>
   </div>
@@ -708,6 +725,7 @@
   </div>
 
   <script src="./js/header-audit.js"></script>
+  <script src="./js/project-request.js"></script>
   <script src="./js/design.js"></script>
   <script src="./js/floating-phone.js"></script>
 

@@ -442,7 +442,7 @@ function capitalizeFirstLetter(text) {
 
 // AJAX form submit for Formspree
 (function () {
-  var forms = document.querySelectorAll('form[action*="formspree.io"]');
+  var forms = document.querySelectorAll('form[action*="formspree.io"]:not([data-project-form])');
   if (!forms.length) return;
 
   function normalizeText(text) {
