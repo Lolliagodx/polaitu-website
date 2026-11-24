@@ -1,0 +1,25 @@
+/* Keep the existing compact menu on widths where the 1920px header is clipped.
+   Phone (<=768px) and full desktop (>=1318px) styles remain unchanged. */
+@media (min-width: 769px) and (max-width: 1317px) {
+  .site-header {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+
+  .site-header .logo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .site-header .main-nav,
+  .site-header .header-project-panel,
+  .site-header .icon-btn {
+    display: none;
+  }
+
+  .site-header .burger-btn,
+  .mobile-nav {
+    display: flex;
+  }
+}
