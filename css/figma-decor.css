@@ -10,6 +10,7 @@
 .smm-case__dot { background:#ca8b00; opacity:.6; transition:opacity .2s ease; }
 .smm-case__dot[aria-pressed="true"],.smm-case__dot:hover { opacity:1; }
 .ai-hero__image { left:0; top:0; width:100%; height:100%; object-fit:cover; }
+.ai-hero { z-index:1; background:#101010; }
 .ai-portfolio { overflow:visible; }
 .ai-enhance .ai-title,.ai-tools .ai-title { position:relative; z-index:1; }
 .smm-hero__decor { left:-220.333px; right:auto; top:744.333px; bottom:auto; width:909.333px; }
