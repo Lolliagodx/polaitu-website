@@ -1,0 +1,52 @@
+/* Shared header/footer from the owner-provided Figma exports. */
+.figma-shell .site-header {
+  left: 0; width: 100%; height: 100px; transform: none;
+  display: flex; align-items: center;
+  padding: 0 max(24px, calc((100vw - 1264px) / 2)); background: #101010;
+}
+.figma-shell .site-header .logo { position: static; flex: 0 0 169px; width: 169px; height: 40px; transform: translateX(-9px); }
+.figma-shell .site-header .main-nav { display: flex; align-items: center; gap: 48px; margin-left: 102px; }
+.figma-shell .site-header .nav-improve-wrapper,
+.figma-shell .site-header .nav-contacts-wrapper { position: relative; left: auto; top: auto; width: auto; height: auto; }
+.figma-shell .site-header .main-nav__link { position: static; display: block; width: auto; height: auto; font-size: 17px; line-height: 21px; color: #fff; }
+.figma-shell .site-header .nav-improve { color: #ffa800; }
+.figma-shell .site-header .header-project-panel { position: static; flex: 0 0 244px; width: 244px; height: 50px; margin-left: auto; }
+.figma-shell .site-header .project-btn { position: static; display: flex; align-items: center; justify-content: center; width: 244px; height: 50px; border: 0; border-radius: 16px; background: #ffa800; color: #000; box-shadow: none; backdrop-filter: none; }
+.figma-shell .site-header .project-btn__label { position: static; width: auto; height: auto; font-size: 17px; line-height: 21px; letter-spacing: 0; color: #000; text-shadow: none; }
+.figma-shell .site-header .project-btn:hover { background: #f0a000; }
+.figma-shell .site-header .icon-btn,
+.figma-shell .site-header .header-audit-tab { display: none !important; }
+.figma-shell .site-header .burger-btn { display: none; }
+.figma-shell .site-header .improve-dropdown { top: calc(100% + 18px); left: 0; }
+.figma-shell .site-header .contacts-dropdown { top: calc(100% + 18px); left: 50%; transform: translateX(-50%); }
+.figma-shell .site-footer { position: relative; left: auto; width: 100%; max-width: 1440px; height: auto; min-height: 100px; margin: 0 auto; padding: 25px 48px; background: #101010; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+.figma-shell .site-footer__logo-link { position: static; display: block; width: 198px; height: auto; transform: translateX(-11px); }
+.figma-shell .site-footer__logo { width: 198px; height: auto; }
+.figma-shell .site-footer__socials { position: static; display: flex; align-items: center; gap: 40px; width: auto; height: auto; }
+.figma-shell .site-footer__social-link { display: block; width: 50px; height: 50px; }
+.figma-shell .site-footer__social-icon { width: 50px; height: 50px; object-fit: contain; }
+.figma-shell .site-footer__links { position: static; justify-self: end; display: flex; flex-direction: column; gap: 0; width: auto; max-width: 370px; height: auto; }
+.figma-shell .site-footer__link { color: #fff; font-size: 12px; line-height: 24px; font-weight: 200; }
+@media (max-width: 1317px) {
+  .figma-shell .site-header .main-nav,
+  .figma-shell .site-header .header-project-panel { display: none; }
+  .figma-shell .site-header .logo { position: absolute; left: 50%; top: 30px; transform: translateX(-50%); }
+  .figma-shell .site-header .burger-btn { display: flex; }
+  .figma-shell .mobile-nav { display: flex; }
+}
+@media (max-width: 900px) {
+  .figma-shell .site-footer { grid-template-columns: 1fr auto; padding: 24px; }
+  .figma-shell .site-footer__logo-link, .figma-shell .site-footer__logo { width: 150px; }
+  .figma-shell .site-footer__socials { gap: 18px; }
+  .figma-shell .site-footer__social-link, .figma-shell .site-footer__social-icon { width: 40px; height: 40px; }
+  .figma-shell .site-footer__links { grid-column: 1 / -1; justify-self: center; text-align: center; }
+}
+@media (max-width: 768px) {
+  .figma-shell .site-header { height: 70px; }
+  .figma-shell .site-header .logo { top: 16px; width: 120px; height: 29px; }
+}
+@media (max-width: 380px) {
+  .figma-shell .site-footer { gap: 16px; padding-inline: 16px; }
+  .figma-shell .site-footer__socials { gap: 12px; }
+  .figma-shell .site-footer__logo-link, .figma-shell .site-footer__logo { width: 128px; }
+}
