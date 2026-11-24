@@ -1,0 +1,72 @@
+/* The original site's glass shimmer, soft tilt and button feedback.
+   Scoped to the new SMM/AI pages; layout and form behaviour stay independent. */
+:is(.smm-page, .ai-page) :is(.smm-gold-button, .ai-hero__cta, .smm-contact__submit, .ai-contact__button, .project-request__submit, .project-request__works) {
+  transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+:is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project) {
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+:is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project) img {
+  cursor: inherit;
+  transition: transform .4s ease;
+}
+:is(.smm-page, .ai-page) :is(.ai-comparison__image, .smm-social__links a) {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+:is(.smm-page, .ai-page) .site-motion-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform .4s ease, box-shadow .3s ease;
+}
+:is(.smm-page, .ai-page) .site-motion-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 calc(var(--glare-x, .5) * 300% - 150%);
+  width: 150%;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 10%, rgb(255 105 180 / 5%) 30%, rgb(0 255 255 / 6%) 40%, rgb(255 255 255 / 15%) 50%, rgb(255 168 0 / 6%) 60%, transparent 80%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity .3s ease;
+}
+:is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project, .smm-gold-button, .ai-hero__cta, .smm-contact__submit, .ai-contact__button, .smm-case__dot, .smm-preview__close, .ai-preview__close, .smm-social__links a):focus-visible {
+  outline: 2px solid #ffa800;
+  outline-offset: 5px;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :is(.smm-page, .ai-page) .site-motion-card.is-motion-active {
+    transform: perspective(1000px) rotateX(var(--motion-x, 0deg)) rotateY(var(--motion-y, 0deg)) scale3d(1.02, 1.02, 1.02);
+    transition: transform .1s ease-out, box-shadow .3s ease;
+    will-change: transform;
+  }
+  :is(.smm-page, .ai-page) .site-motion-card.is-motion-active::before { opacity: 1; }
+  :is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project):hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 28%), 0 0 0 1px rgb(255 255 255 / 24%);
+  }
+  :is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project):hover img { transform: scale(1.025); }
+  .ai-page .ai-comparison__image:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgb(0 0 0 / 25%); }
+  .smm-page .smm-social__links a:hover { transform: scale(1.1); }
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.smm-page, .ai-page) :is(.smm-gold-button, .ai-hero__cta):hover {
+    background: rgb(255 168 0 / 46%);
+    border-top-color: rgb(255 255 255 / 60%);
+    border-left-color: rgb(255 255 255 / 50%);
+  }
+  :is(.smm-page, .ai-page) :is(.smm-contact__submit, .ai-contact__button):hover:not(:disabled) {
+    background: rgb(180 180 180 / 35%);
+    border-top-color: rgb(255 255 255 / 60%);
+    border-left-color: rgb(255 255 255 / 50%);
+  }
+}
+:is(.smm-page, .ai-page) :is(.smm-gold-button, .ai-hero__cta):active { background: #805806; }
+:is(.smm-page, .ai-page) :is(.smm-contact__submit, .ai-contact__button):active:not(:disabled) { background: #404040; }
+@media (prefers-reduced-motion: reduce) {
+  :is(.smm-page, .ai-page) :is(.site-motion-card, .smm-case__poster, .smm-gallery__item, .ai-project, .ai-comparison__image, .smm-social__links a, .smm-gold-button, .ai-hero__cta, .smm-contact__submit, .ai-contact__button, .project-request__submit, .project-request__works),
+  :is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project) img,
+  :is(.smm-page, .ai-page) .site-motion-card::before { transition: none; }
+}

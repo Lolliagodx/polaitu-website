@@ -24,7 +24,7 @@
 .smm-case__goal { position: relative; z-index: 1; margin: var(--goal-gap,52px) 0 0; font-size: 48px; line-height: 60px; font-weight: 300; }
 .smm-case__goal span,.smm-review__quote span,.smm-review__author span { color: #ffa800; }
 .smm-case__body { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,634fr) minmax(0,564fr); gap: 66px; margin-top: var(--media-gap,120px); }
-.smm-case__poster { display: block; position: relative; width: 100%; height: var(--poster-height,1127px); padding: 0; overflow: hidden; border: 0; border-radius: 33px; background: #161616; cursor: zoom-in; }
+.smm-case__poster { display: block; position: relative; width: 100%; height: var(--poster-height,1127px); padding: 0; overflow: hidden; border: 0; border-radius: 33px; background: #161616; cursor: pointer; }
 .smm-case__poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .smm-case__metrics { padding-top: var(--stats-top,70px); }
 .smm-stat { display: flex; flex-direction: column; justify-content: center; min-height: 237px; padding: 26px 22px; border: 1px solid rgb(255 255 255 / 23%); border-top-color: rgb(255 255 255 / 17%); border-right-color: transparent; border-left-color: transparent; border-radius: 18px; background: linear-gradient(180deg,#121212,#101010); box-shadow: inset 0 0 16px rgb(0 0 0 / 25%); }
@@ -65,7 +65,7 @@
 .smm-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:46px; max-width:1110px; width:calc(100% - 48px); margin:107px auto 0; }
 .smm-gallery__column { display:flex; flex-direction:column; min-width:0; }
 .smm-gallery__column--right { padding-top:214px; }
-.smm-gallery__item { display:block; width:100%; height:947px; padding:0; overflow:hidden; border:0; border-radius:33px; background:#161616; cursor:zoom-in; }
+.smm-gallery__item { display:block; width:100%; height:947px; padding:0; overflow:hidden; border:0; border-radius:33px; background:#161616; cursor:pointer; }
 .smm-gallery__item img { display:block; width:100%; height:100%; object-fit:cover; }
 .smm-gallery__column--left .smm-gallery__item + .smm-gallery__item { margin-top:64px; }
 .smm-gallery__column--left .smm-gallery__item:last-child { margin-top:48px; }
