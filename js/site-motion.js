@@ -45,4 +45,17 @@
   window.addEventListener('blur', resetAll);
   window.addEventListener('resize', resetAll, { passive: true });
   window.addEventListener('scroll', resetAll, { passive: true, capture: true });
+  // Animate each decorative image independently, only while it is on screen.
+  var decorations = document.querySelectorAll('.smm-decor, .ai-decor');
+  if (decorations.length) {
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) { entry.target.classList.toggle('is-decor-visible', entry.isIntersecting); });
+      });
+      decorations.forEach(function (decoration) { observer.observe(decoration); });
+    } else decorations.forEach(function (decoration) { decoration.classList.add('is-decor-visible'); });
+    function pauseHiddenPage() { document.documentElement.classList.toggle('site-decor-paused', document.hidden); }
+    document.addEventListener('visibilitychange', pauseHiddenPage);
+    pauseHiddenPage();
+  }
 })();

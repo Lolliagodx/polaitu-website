@@ -9,7 +9,12 @@
 .figma-shell .site-header .nav-improve-wrapper,
 .figma-shell .site-header .nav-contacts-wrapper { position: relative; left: auto; top: auto; width: auto; height: auto; }
 .figma-shell .site-header .main-nav__link { position: static; display: block; width: auto; height: auto; font-size: 17px; line-height: 21px; color: #fff; }
-.figma-shell .site-header .nav-improve { color: #ffa800; }
+.figma-shell .site-header .nav-improve { color: #fff; }
+.figma-shell .site-header .main-nav__link[aria-current="page"],
+.figma-shell .site-header .nav-improve[data-current-section="services"],
+.figma-shell .site-header .improve-dropdown__item[aria-current="page"],
+.figma-shell .mobile-nav [aria-current="page"],
+.figma-shell .mobile-nav__group-title[data-current-section="services"] { color: #ffa800; }
 .figma-shell .site-header .header-project-panel { position: static; flex: 0 0 244px; width: 244px; height: 50px; margin-left: auto; }
 .figma-shell .site-header .project-btn { position: static; display: flex; align-items: center; justify-content: center; width: 244px; height: 50px; border: 0; border-radius: 16px; background: #ffa800; color: #000; box-shadow: none; backdrop-filter: none; }
 .figma-shell .site-header .project-btn__label { position: static; width: auto; height: auto; font-size: 17px; line-height: 21px; letter-spacing: 0; color: #000; text-shadow: none; }

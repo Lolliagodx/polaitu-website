@@ -1,5 +1,24 @@
 /* The original site's glass shimmer, soft tilt and button feedback.
    Scoped to the new SMM/AI pages; layout and form behaviour stay independent. */
+@keyframes site-decor-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(var(--decor-float-distance, -30px)); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  :is(.smm-page, .ai-page) :is(.smm-decor, .ai-decor) {
+    animation: site-decor-float 6s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+  :is(.smm-page, .ai-page) :is(.smm-decor, .ai-decor).is-decor-visible { animation-play-state: running; }
+  .smm-page :is(.smm-case__decor--zapravka-head, .smm-case__decor--pryany-review),
+  .ai-page :is(.ai-portfolio__decor-bottom, .ai-tools__decor) { animation-duration: 7s; }
+  .smm-page :is(.smm-case__decor--zapravka-review, .smm-case__decor--niti-review),
+  .ai-page .ai-services__decor { animation-duration: 5.5s; }
+  html.site-decor-paused :is(.smm-decor, .ai-decor) { animation-play-state: paused; }
+}
+@media (max-width: 768px) {
+  :is(.smm-page, .ai-page) :is(.smm-decor, .ai-decor) { --decor-float-distance: -14px; }
+}
 :is(.smm-page, .ai-page) :is(.smm-gold-button, .ai-hero__cta, .smm-contact__submit, .ai-contact__button, .project-request__submit, .project-request__works) {
   transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }

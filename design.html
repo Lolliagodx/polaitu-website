@@ -39,7 +39,7 @@
     });
   </script>
   <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="./css/site-shell.css?v=20261124-1" />
+  <link rel="stylesheet" href="./css/site-shell.css?v=20261124-2" />
 </head>
 
 <body class="figma-shell">
@@ -54,12 +54,12 @@
 
       <nav class="main-nav" aria-label="Главная навигация">
         <div class="nav-improve-wrapper">
-          <a class="main-nav__link main-nav__link--accent nav-improve" href="#" id="improveMenuBtn">Улучшить бизнес</a>
+          <a class="main-nav__link nav-improve" href="#" id="improveMenuBtn" data-current-section="services">Улучшить бизнес</a>
 
           <div class="improve-dropdown" id="improveDropdown">
             <a href="video.html" class="improve-dropdown__item">Видео</a>
             <a href="smm.html" class="improve-dropdown__item">Смм</a>
-            <a href="design.html" class="improve-dropdown__item">Дизайн</a>
+            <a href="design.html" class="improve-dropdown__item" aria-current="page">Дизайн</a>
             <a href="ai.html" class="improve-dropdown__item">Нейросети</a>
           </div>
         </div>
@@ -113,13 +113,13 @@
     <nav class="mobile-nav" id="mobileNav" aria-label="Мобильное меню">
       <button class="mobile-nav__close" id="mobileNavClose" aria-label="Закрыть меню">&times;</button>
       <div class="mobile-nav__menu">
-        <a class="mobile-nav__link mobile-nav__link--accent" href="./index.html">Главная</a>
+        <a class="mobile-nav__link" href="./index.html">Главная</a>
         <a class="mobile-nav__link" href="./company.html">О компании</a>
         <div class="mobile-nav__group">
-          <span class="mobile-nav__group-title">Улучшить бизнес</span>
+          <span class="mobile-nav__group-title" data-current-section="services">Улучшить бизнес</span>
           <a class="mobile-nav__sub-link" href="./video.html">Видео</a>
           <a class="mobile-nav__sub-link" href="./smm.html">SMM</a>
-          <a class="mobile-nav__sub-link" href="./design.html">Дизайн</a>
+          <a class="mobile-nav__sub-link" href="./design.html" aria-current="page">Дизайн</a>
           <a class="mobile-nav__sub-link" href="./ai.html">Нейросети</a>
         </div>
         <div class="mobile-nav__group">
