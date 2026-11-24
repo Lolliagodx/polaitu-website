@@ -1,0 +1,18 @@
+/* Keep the content grid centered while decorations belong to the viewport. */
+.smm-page,.ai-page { background:#000; }
+:is(.smm-page,.ai-page) :is(.site-header,.site-footer,.ai-hero,.smm-preview,.ai-preview) { background:#000; }
+.smm-main,.ai-main { max-width:none; width:100%; margin-inline:0; overflow:hidden; }
+.smm-social__link img { border-radius:50%; }
+:is(.smm-page,.ai-page) { --decor-gutter:max(0px,calc((100vw - 1440px) / 2)); }
+@media (min-width:1318px) {
+ .smm-hero__decor { left:calc(-220.333px - var(--decor-gutter)); }
+ .smm-case__decor--zapravka-head { left:calc(1136.667px + var(--decor-gutter)); }
+ .smm-case__decor--zapravka-review { left:calc(686.333px + var(--decor-gutter)); }
+ .smm-case__decor--pryany-head { left:calc(993.667px + var(--decor-gutter)); }
+ .smm-case__decor--pryany-review { left:calc(1052px + var(--decor-gutter)); }
+ .smm-case__decor--niti-review { left:calc(-228px - var(--decor-gutter)); }
+ .ai-portfolio__decor-top { left:calc(1054.667px + var(--decor-gutter)); }
+ .ai-portfolio__decor-bottom { left:calc(-124.667px - var(--decor-gutter)); }
+ .ai-services__decor { left:calc(926.667px + var(--decor-gutter)); }
+ .ai-tools__decor { left:calc(-561px - var(--decor-gutter)); }
+}
