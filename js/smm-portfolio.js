@@ -40,7 +40,7 @@
       var button = document.createElement('button');
       button.type = 'button'; button.className = 'smm-case__dot';
       button.setAttribute('aria-label', 'Слайд ' + (index + 1) + ' из ' + entry.slides.length);
-      button.addEventListener('click', function () { show(index); });
+      button.addEventListener('click', function () { show(index); button.focus({ preventScroll: true }); });
       controls.appendChild(button); buttons.push(button);
     });
     root.addEventListener('keydown', function (event) {

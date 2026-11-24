@@ -42,10 +42,12 @@
 :is(.smm-page, .ai-page) .site-motion-card::before {
   content: "";
   position: absolute;
-  inset: 0 auto 0 calc(var(--glare-x, .5) * 300% - 150%);
-  width: 150%;
+  inset: 0;
   border-radius: inherit;
   background: linear-gradient(115deg, transparent 10%, rgb(255 105 180 / 5%) 30%, rgb(0 255 255 / 6%) 40%, rgb(255 255 255 / 15%) 50%, rgb(255 168 0 / 6%) 60%, transparent 80%);
+  background-size: 150% 100%;
+  background-position: calc(var(--glare-x, .5) * 100%) 0;
+  background-repeat: no-repeat;
   opacity: 0;
   pointer-events: none;
   z-index: 1;
