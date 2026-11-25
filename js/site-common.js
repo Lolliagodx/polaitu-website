@@ -1,5 +1,21 @@
 (function () {
   'use strict';
+  // Key out only the flat #101010 matte, preserving the original icon colours.
+  var svgNS = 'http://www.w3.org/2000/svg';
+  var iconFilters = document.createElementNS(svgNS, 'svg');
+  iconFilters.setAttribute('width', '0'); iconFilters.setAttribute('height', '0');
+  iconFilters.setAttribute('aria-hidden', 'true'); iconFilters.style.position = 'absolute';
+  var alphaTable = Array.from({length:256}, function (_, i) { return i === 16 ? '0' : '1'; }).join(' ');
+  var channelMasks = ['R','G','B'].map(function (channel,index) {
+    var row = [0,0,0,0,0]; row[index] = 1;
+    return '<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ' + row.join(' ') + '" result="channel' + channel + '"/>' +
+      '<feComponentTransfer in="channel' + channel + '" result="not' + channel + '"><feFuncA type="discrete" tableValues="' + alphaTable + '"/></feComponentTransfer>';
+  }).join('');
+  iconFilters.innerHTML = '<defs><filter id="polaituContactMatte" color-interpolation-filters="sRGB">' + channelMasks +
+    '<feComposite in="notR" in2="notG" operator="arithmetic" k2="1" k3="1" result="rg"/>' +
+    '<feComposite in="rg" in2="notB" operator="arithmetic" k2="1" k3="1" result="keep"/>' +
+    '<feComposite in="SourceGraphic" in2="keep" operator="in"/></filter></defs>';
+  document.body.appendChild(iconFilters);
   var header = document.querySelector('.site-header');
   var nav = document.getElementById('mobileNav');
   var burger = document.getElementById('burgerBtn');

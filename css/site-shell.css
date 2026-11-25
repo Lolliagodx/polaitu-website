@@ -64,3 +64,9 @@
 .site-nav-open .floating-phone-widget { visibility:hidden; }
 .floating-phone-widget { pointer-events:none; }
 .floating-phone-widget__button { pointer-events:auto; }
+/* Remove only the source matte against the card's translucent backing. */
+.figma-shell .site-header .contacts-dropdown { width:220px; padding:16px; gap:12px; background:rgba(10,10,10,.92); }
+.figma-shell .contacts-dropdown__phone { display:block; font-size:15px; line-height:22px; letter-spacing:0; text-align:center; }
+.figma-shell .contacts-dropdown__socials { gap:14px; }
+.figma-shell .contacts-dropdown__social-link { width:36px; height:36px; }
+.figma-shell .site-header .contacts-dropdown__social-icon { width:30px; height:30px; filter:url(#polaituContactMatte); }
