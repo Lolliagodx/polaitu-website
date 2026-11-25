@@ -209,8 +209,8 @@
  .smm-contact__title { font-size:29px; line-height:37px; }
 }
 
-/* Inline autoplay: no play overlay, media button or lightbox. */
-.smm-case__poster,.smm-gallery__item { cursor:default; }
+/* Inline hover/tap previews share the same clipped frame at every slide. */
+.smm-page .smm-main :is(.smm-case__poster,.smm-gallery__item) { position:relative; cursor:pointer; align-self:start; flex-shrink:0; }
 .smm-case__poster > img[hidden],.smm-inline-video[hidden] { display:none; }
 .smm-inline-video { display:block; width:100%; height:100%; object-fit:cover; }
 .smm-gallery__item { aspect-ratio:532 / 947; }
@@ -224,3 +224,18 @@
 .smm-inline-video { opacity:0; transform:translateZ(0); }
 .smm-inline-video.is-frame-ready { opacity:1; }
 @media (max-width:768px) { .smm-case__poster { --media-radius:28px; } .smm-gallery__item { --media-radius:20px; } }
+
+.smm-case__poster { height:auto; aspect-ratio:9 / 16; }
+.smm-media-layer { display:block; position:absolute; inset:0; border-radius:inherit; overflow:hidden; opacity:0; transition:opacity .28s ease; }
+.smm-media-layer.is-current { opacity:1; }
+.smm-media-layer > img,.smm-media-layer > video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:inherit; pointer-events:none; }
+.smm-page .smm-media-layer .smm-inline-video { opacity:0; transition:opacity .18s ease; }
+.smm-page .is-playing .smm-media-layer.is-current .smm-inline-video.is-frame-ready,
+.smm-page .smm-media-layer.is-outgoing-playing .smm-inline-video.is-frame-ready { opacity:1; }
+.smm-media-play { position:absolute; z-index:3; inset:0; display:grid; place-items:center; pointer-events:none; opacity:1; transition:opacity .18s ease; }
+.smm-media-play svg { box-sizing:content-box; width:26px; height:26px; padding:17px; color:#ffa800; border:1px solid rgb(255 255 255 / 28%); border-radius:50%; background:rgb(0 0 0 / 55%); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 4px 20px rgb(0 0 0 / 25%); }
+.is-playing > .smm-media-play { opacity:0; }
+/* Cover and video use the same crop, avoiding a zoom jump when playback starts. */
+.smm-page .smm-media-layer > img { transform:none !important; }
+@media (max-width:768px) { .smm-media-play svg { width:22px; height:22px; padding:13px; } }
+@media (prefers-reduced-motion:reduce) { .smm-media-layer,.smm-media-play,.smm-page .smm-media-layer .smm-inline-video { transition:none; } }

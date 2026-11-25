@@ -187,7 +187,7 @@ window.POLAITU_SMM_CASES = [
       {
         "titleHTML": "“Belgee” <br>(ООО “Слава Моторс Рус”)",
         "logo": "./assets/smm/slides/logo-belgee.webp",
-        "goalHTML": "Успели поработать с крупными брендами машин",
+        "goalHTML": "Успели поработать с крупными брендами <br>машин",
         "poster": "./assets/smm/slides/geely-2.webp",
         "video": "./assets/reels/belgee.mp4",
         "views": "156.000",
@@ -199,7 +199,7 @@ window.POLAITU_SMM_CASES = [
       {
         "titleHTML": "“NordCross”<br>(ООО “Слава Моторс Рус”)",
         "logo": "./assets/smm/slides/logo-nordcross.webp",
-        "goalHTML": "Успели поработать с крупными брендами машин",
+        "goalHTML": "Успели поработать с крупными брендами <br>машин",
         "poster": "./assets/smm/slides/geely-3.webp",
         "video": "./assets/reels/nordcross.mp4",
         "views": "22.300",
