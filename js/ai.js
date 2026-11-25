@@ -3,6 +3,22 @@
   var cards = [];
   var cardStates = new WeakMap();
 
+  var hero = document.querySelector('[data-ai-hero-video]');
+  if (hero) {
+    function revealHero() { hero.classList.add('is-playing'); }
+    hero.addEventListener('playing', revealHero);
+    hero.addEventListener('error', function () { hero.classList.add('is-unavailable'); });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      hero.pause();
+      hero.classList.add('is-static');
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) hero.play().then(revealHero).catch(function () {});
+        else hero.pause();
+      }, { threshold: 0.01 }).observe(hero);
+    } else hero.play().then(revealHero).catch(function () {});
+  }
+
   function syncCard(state) {
     var video = state.video;
     if (state.wantsPlay && state.inView && !document.hidden) {
