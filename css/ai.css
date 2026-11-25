@@ -1,12 +1,12 @@
 .ai-page { background: #101010; }
 .ai-page .page { max-width: none; }
 .ai-page .mobile-nav [aria-current="page"] { color: #ffa800; }
-.ai-main { padding-top: 100px; overflow: hidden; }
+.ai-main { --ai-header-height:100px; padding-top:var(--ai-header-height); overflow: hidden; }
 .ai-container { width: min(1264px, calc(100% - 48px)); margin-inline: auto; }
 .ai-title { margin: 0; font-size: 60px; line-height: 74px; font-weight: 500; }
 .ai-title span { color: #ffa800; }
 .ai-title--center { text-align: center; }
-.ai-hero { position: relative; width:100%; max-width:none; height: 817px; margin-inline: auto; overflow: hidden; }
+.ai-hero { position: relative; width:100%; max-width:none; height:calc(100vh - var(--ai-header-height)); height:calc(100dvh - var(--ai-header-height)); margin-inline: auto; overflow: hidden; }
 .ai-hero__image { position: absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .ai-hero__title { position: relative; margin: 0; padding-top: 110px; margin-left: max(24px, calc((100% - 1264px) / 2)); font-family: "Unbounded", "Bounded", sans-serif; font-size: 60px; line-height: 74px; font-weight: 500; }
 .ai-hero__cta { position: absolute; right: max(24px,calc((100% - 1264px) / 2)); bottom: 93px; width: 538px; min-height: 86px; border: 1px solid rgb(255 255 255 / 20%); border-top-color: rgb(255 255 255 / 40%); border-radius: 22px; background: rgb(255 168 0 / 36%); color: #fff; font: inherit; font-size: 28px; line-height: 34px; font-weight: 700; text-shadow: 0 3px 4px #333; box-shadow: 0 5px 12px rgb(0 0 0 / 20%); cursor: pointer; backdrop-filter: blur(16px); }
@@ -91,9 +91,8 @@
   .ai-contact__input, .ai-contact__message { font-size: 19px; }
 }
 @media (max-width: 768px) {
-  .ai-main { padding-top: 70px; }
+  .ai-main { --ai-header-height:70px; }
   .ai-container { width: calc(100% - 32px); }
-  .ai-hero { height: 680px; max-height: 900px; }
   .ai-hero__image { object-fit: cover; }
   .ai-hero__title { margin-left: 24px; padding-top: 70px; font-size: clamp(29px,5.7vw,42px); }
   .ai-hero__cta { min-height: 68px; bottom: 48px; font-size: 20px; line-height: 28px; }
@@ -115,7 +114,6 @@
   .ai-contact__consent { margin-left: 0; font-size: 12px; line-height: 17px; }
 }
 @media (max-width: 600px) {
-  .ai-hero { height: 600px; }
   .ai-gallery { grid-template-columns: 1fr; }
   .ai-portfolio__decor-top { width: 280px; right: -40px; }
   .ai-portfolio__decor-bottom { width: 340px; bottom: 10px; }
@@ -138,3 +136,7 @@
 @media (max-width: 380px) { .ai-service__title { font-size: 20px; line-height: 26px; } }
 
 .ai-project { cursor:default; }
+@media (max-height:600px) {
+  .ai-hero__title { padding-top:24px; font-size:clamp(26px,5vh,40px); line-height:1.25; }
+  .ai-hero__cta { bottom:24px; min-height:60px; font-size:20px; line-height:26px; }
+}
