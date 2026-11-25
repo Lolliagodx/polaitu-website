@@ -21,7 +21,9 @@
       poster.querySelector('img').src = slide.poster;
       poster.dataset.smmPreview = slide.poster;
       poster.dataset.videoSource = slide.video || '';
-      poster.dataset.previewTitle = root.querySelector('[data-case-title]').textContent;
+      poster.dataset.sourceUrl = slide.sourceUrl || '';
+      poster.dataset.previewTitle = (slide.titleHTML || entry.titleHTML).replace(/<br\s*\/?\s*>/gi, ' ').replace(/<[^>]*>/g, '') + (slide.videoTitle ? ' — ' + slide.videoTitle : '');
+      poster.setAttribute('aria-label', 'Смотреть видео: ' + poster.dataset.previewTitle);
       poster.querySelector('img').alt = 'Кадр из работы ' + poster.dataset.previewTitle;
       root.querySelector('[data-case-views]').textContent = slide.views;
       root.querySelector('[data-case-metric-label]').textContent = slide.metricLabel;
@@ -67,6 +69,8 @@
     var image = dialog.querySelector('[data-smm-preview-image]');
     var video = dialog.querySelector('[data-smm-preview-video]');
     var title = dialog.querySelector('[data-smm-preview-title]');
+    var sourceLink = dialog.querySelector('[data-smm-preview-source]');
+    var status = dialog.querySelector('[data-smm-preview-status]');
     var previousOverflow = '';
     document.querySelectorAll('[data-smm-preview]').forEach(function (button) {
       button.addEventListener('click', function () {
@@ -74,14 +78,28 @@
         image.src = button.dataset.smmPreview; image.alt = button.dataset.previewTitle;
         title.textContent = button.dataset.previewTitle;
         var source = button.dataset.videoSource;
+        sourceLink.hidden = !button.dataset.sourceUrl;
+        if (button.dataset.sourceUrl) sourceLink.href = button.dataset.sourceUrl;
+        else sourceLink.removeAttribute('href');
+        status.hidden = true;
         image.hidden = Boolean(source); video.hidden = !source;
         if (source) { video.src = source; video.poster = button.dataset.smmPreview; }
         previousOverflow = document.documentElement.style.overflow;
         document.documentElement.style.overflow = 'hidden'; dialog.showModal();
-        if (source) video.play().catch(function () {});
+        if (source) video.play().catch(function () {
+          if (video.error || !dialog.open) return;
+          status.textContent = 'Нажмите ▶ в плеере, чтобы запустить видео.';
+          status.hidden = false;
+        });
       });
     });
-    video.addEventListener('error', function () { image.hidden = false; video.hidden = true; });
+    video.addEventListener('error', function () {
+      if (!video.getAttribute('src')) return;
+      image.hidden = false; video.hidden = true;
+      status.textContent = 'Не удалось загрузить видео. Попробуйте открыть его ещё раз.';
+      status.hidden = false;
+    });
+    video.addEventListener('playing', function () { status.hidden = true; });
     dialog.querySelector('[data-smm-preview-close]').addEventListener('click', function () { dialog.close(); });
     dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
     dialog.addEventListener('close', function () { video.pause(); video.removeAttribute('src'); video.load(); document.documentElement.style.overflow = previousOverflow; });
