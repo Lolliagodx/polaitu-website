@@ -55,3 +55,7 @@
   .figma-shell .site-footer__socials { gap: 12px; }
   .figma-shell .site-footer__logo-link, .figma-shell .site-footer__logo { width: 128px; }
 }
+
+/* Match the page black; remove the flattened #101010 matte around social marks. */
+.figma-shell .site-footer { background:#000; }
+.figma-shell :is(.site-footer__social-icon,.contacts-dropdown__social-icon,.mobile-nav__social img) { filter:contrast(1.145); }

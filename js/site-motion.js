@@ -4,11 +4,15 @@
   var hover = window.matchMedia('(hover: hover) and (pointer: fine)');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var resets = [];
-  document.querySelectorAll('.smm-stat, .smm-review__quote, .ai-service, .ai-tool').forEach(function (card) {
+  function setupCards(scope) {
+    resets = resets.filter(function (reset) { return reset.card.isConnected; });
+    scope.querySelectorAll('.smm-stat, .smm-review__quote, .smm-comment, .ai-service, .ai-tool').forEach(function (card) {
+    if (card.dataset.motionReady) return;
+    card.dataset.motionReady = 'true';
     card.classList.add('site-motion-card');
     var rect = null, frame = 0, point = null;
     // Use the original perspective and shimmer, with a gentler angle for long reviews.
-    var maxTilt = card.matches('.smm-review__quote') ? 5 : 12;
+    var maxTilt = card.matches('.smm-review__quote, .smm-comment') ? 5 : 12;
     function reset() {
       if (frame) window.cancelAnimationFrame(frame);
       frame = 0; rect = null; point = null;
@@ -35,8 +39,12 @@
     }, { passive: true });
     card.addEventListener('pointerleave', reset);
     card.addEventListener('pointercancel', reset);
+    reset.card = card;
     resets.push(reset);
   });
+  }
+  setupCards(document);
+  document.addEventListener('smm:comments-changed', function (event) { setupCards(event.target); });
   function resetAll() { resets.forEach(function (reset) { reset(); }); }
   [hover, reduced].forEach(function (query) {
     if (query.addEventListener) query.addEventListener('change', resetAll);

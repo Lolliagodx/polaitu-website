@@ -23,7 +23,7 @@
   transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 :is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project) {
-  cursor: pointer;
+  cursor: default;
   transition: transform .3s ease, box-shadow .3s ease;
 }
 :is(.smm-page, .ai-page) :is(.smm-case__poster, .smm-gallery__item, .ai-project) img {

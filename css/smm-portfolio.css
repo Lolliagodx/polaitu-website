@@ -94,16 +94,6 @@
 .smm-contact__submit { grid-column:1; grid-row:2; align-self:end; width:368px; max-width:100%; min-height:73px; border:1px solid rgb(255 255 255 / 20%); border-radius:21px; background:#252525; color:#fff; font:inherit; font-size:23px; font-weight:700; cursor:pointer; }
 .smm-contact__submit:disabled { opacity:.65; cursor:wait; }
 .smm-contact__status { margin:0; font-size:16px; line-height:23px; }
-.smm-preview { width:min(1000px,calc(100% - 32px)); max-height:calc(100dvh - 32px); padding:56px 24px 24px; border:1px solid #555; border-radius:24px; background:#101010; color:#fff; }
-.smm-preview::backdrop { background:rgb(0 0 0 / 85%); }
-.smm-preview__close { position:absolute; top:10px; right:12px; width:40px; height:40px; border:0; background:transparent; color:#fff; font-size:34px; cursor:pointer; }
-.smm-preview__image,.smm-preview__video { display:block; width:100%; max-height:72dvh; object-fit:contain; border-radius:16px; }
-.smm-preview [hidden] { display:none; }
-.smm-preview__source { display:block; width:fit-content; margin:20px auto 0; padding:12px 20px; border:1px solid #fff; border-radius:12px; color:#fff; text-align:center; }
-.smm-preview__status { text-align:center; margin:16px 0 0; }
-.smm-case__poster,.smm-gallery__item { position:relative; }
-.smm-case__poster::after,.smm-gallery__item::after { content:'▶'; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:grid; place-items:center; width:64px; height:64px; padding-left:4px; border:1px solid rgb(255 255 255 / 75%); border-radius:50%; background:rgb(0 0 0 / 55%); color:#fff; font-size:26px; pointer-events:none; }
-.smm-preview__title { margin:20px 0 0; font-size:24px; line-height:1.3; text-align:center; }
 .smm-page :focus-visible { outline:3px solid #ffa800; outline-offset:5px; }
 @media (max-width:1100px) {
  .smm-hero { height:1200px; }
@@ -218,3 +208,12 @@
  .smm-social__link img { width:76px; height:76px; }
  .smm-contact__title { font-size:29px; line-height:37px; }
 }
+
+/* Inline autoplay: no play overlay, media button or lightbox. */
+.smm-case__poster,.smm-gallery__item { cursor:default; }
+.smm-case__poster > img[hidden],.smm-inline-video[hidden] { display:none; }
+.smm-inline-video { display:block; width:100%; height:100%; object-fit:cover; }
+.smm-gallery__item { aspect-ratio:532 / 947; }
+.smm-case__source { position:absolute; left:12px; right:12px; bottom:16px; z-index:2; padding:12px; border-radius:12px; color:#fff; background:rgb(0 0 0 / 75%); text-align:center; font-size:16px; }
+.smm-case__source[hidden] { display:none; }
+.smm-comment { border-radius:18px; }

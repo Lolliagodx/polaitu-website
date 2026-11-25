@@ -2,7 +2,7 @@
 .smm-page,.ai-page { background:#000; }
 :is(.smm-page,.ai-page) :is(.site-header,.site-footer,.ai-hero,.smm-preview,.ai-preview) { background:#000; }
 .smm-main,.ai-main { max-width:none; width:100%; margin-inline:0; overflow:hidden; }
-.smm-social__link img { border-radius:50%; }
+.smm-social__link img { border-radius:0; filter:contrast(1.145); }
 :is(.smm-page,.ai-page) { --decor-gutter:max(0px,calc((100vw - 1440px) / 2)); }
 @media (min-width:1318px) {
  .smm-hero__decor { left:calc(-220.333px - var(--decor-gutter)); }
