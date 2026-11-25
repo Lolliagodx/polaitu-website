@@ -177,26 +177,24 @@ window.POLAITU_SMM_CASES = [
         "logo": "./assets/smm/logo-geely.webp",
         "goalHTML": "Успели поработать с крупными брендами <br>машин",
         "poster": "./assets/smm/geely-1.webp",
-        "video": null,
+        "video": "./assets/reels/geely-cooling.mp4",
         "views": "82.000",
         "metricLabel": "Охваты",
         "metricValue": "60.000",
         "comments": [],
-        "videoTitle": "Geely: охлаждение",
-        "sourceUrl": "https://vk.ru/clip-83363436_456240979"
+        "videoTitle": "Geely: охлаждение"
       },
       {
         "titleHTML": "“Belgee” <br>(ООО “Слава Моторс Рус”)",
         "logo": "./assets/smm/slides/logo-belgee.webp",
         "goalHTML": "Успели поработать с крупными брендами машин",
         "poster": "./assets/smm/slides/geely-2.webp",
-        "video": null,
+        "video": "./assets/reels/belgee.mp4",
         "views": "156.000",
         "metricLabel": "Удержание",
         "metricValue": "64%",
         "comments": [],
-        "videoTitle": "Belgee",
-        "sourceUrl": "https://vk.ru/clip-225936979_456239574"
+        "videoTitle": "Belgee"
       },
       {
         "titleHTML": "“NordCross”<br>(ООО “Слава Моторс Рус”)",
