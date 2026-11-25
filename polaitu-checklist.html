@@ -5,6 +5,7 @@
 <link rel="icon" href="https://cdn.полайту.com/videos/milli popup/popuplogo.png" type="image/png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Аудит визуала — Полайту</title>
+<meta name="description" content="Бесплатный чек-лист Полайту: самостоятельный аудит визуала, контента и оформления бизнеса.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 <!-- Yandex.Metrika counter -->
@@ -447,17 +448,17 @@
       <h2>Получить чек-лист</h2>
       <p>Оставьте данные — пройдёте аудит прямо здесь</p>
       <div class="field">
-        <label>Ваше имя</label>
-        <input type="text" id="f-name" placeholder="Иван">
+        <label for="f-name">Ваше имя</label>
+        <input type="text" autocomplete="name" id="f-name" placeholder="Иван">
       </div>
       <div class="field">
-        <label>Телефон</label>
+        <label for="f-phone">Телефон</label>
         <input type="tel" id="f-phone" placeholder="79991234567" inputmode="numeric" autocomplete="tel" maxlength="11">
       </div>
       <div class="form-error" id="checklist-form-error" aria-live="polite"></div>
       <div class="consent-row">
-        <input type="checkbox" id="consent1">
-        <span>Я согласен(-на) на <a href="#personalDataChecklistPopup" data-policy-popup="personalDataChecklistPopup">обработку персональных данных</a>, с <a href="#privacyChecklistPopup" data-policy-popup="privacyChecklistPopup">политикой конфиденциальности</a> и получение маркетинговых материалов от Полайту</span>
+        <input type="checkbox" id="consent1" aria-labelledby="checklistConsentLabel">
+        <span id="checklistConsentLabel">Я согласен(-на) на <a href="#personalDataChecklistPopup" data-policy-popup="personalDataChecklistPopup">обработку персональных данных</a>, с <a href="#privacyChecklistPopup" data-policy-popup="privacyChecklistPopup">политикой конфиденциальности</a> и получение маркетинговых материалов от Полайту</span>
       </div>
       <div class="consent-doc-links">
         Документы: <a href="#personalDataChecklistPopup" data-policy-popup="personalDataChecklistPopup">согласие на обработку персональных данных</a> и <a href="#privacyChecklistPopup" data-policy-popup="privacyChecklistPopup">политика конфиденциальности</a>
@@ -620,11 +621,11 @@
       <p>Оставьте Telegram и город — мы посмотрим ваш визуал лично и скажем что именно теряет вам деньги. Бесплатно, за 30 минут.</p>
       <div class="fields-row">
         <div class="field">
-          <label>Telegram</label>
+          <label for="f-tg">Telegram</label>
           <input type="text" id="f-tg" placeholder="@username">
         </div>
         <div class="field">
-          <label>Город</label>
+          <label for="f-city">Город</label>
           <input type="text" id="f-city" placeholder="Казань">
         </div>
       </div>
@@ -650,7 +651,7 @@
       <div class="policy-popup__title">Политика конфиденциальности</div>
     </div>
     <div class="policy-popup__body">
-      <iframe class="policy-popup__frame" title="Политика конфиденциальности" src="https://cdn.полайту.com/documents/Политика-конфиденциальности-.pdf"></iframe>
+      <iframe loading="lazy" class="policy-popup__frame" title="Политика конфиденциальности" src="https://cdn.полайту.com/documents/Политика-конфиденциальности-.pdf"></iframe>
     </div>
   </div>
 </div>
@@ -664,7 +665,7 @@
       <div class="policy-popup__title">Согласие на обработку персональных данных</div>
     </div>
     <div class="policy-popup__body">
-      <iframe class="policy-popup__frame" title="Согласие на обработку персональных данных" src="https://cdn.полайту.com/documents/obrabotka.pdf"></iframe>
+      <iframe loading="lazy" class="policy-popup__frame" title="Согласие на обработку персональных данных" src="https://cdn.полайту.com/documents/obrabotka.pdf"></iframe>
     </div>
   </div>
 </div>
@@ -911,6 +912,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   </script>
-  <script src="./js/floating-phone.js"></script>
+  <script src="./js/floating-phone.js?v=20261125-review"></script>
 </body>
 </html>

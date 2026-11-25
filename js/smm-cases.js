@@ -82,7 +82,7 @@ window.POLAITU_SMM_CASES = [
       {
         "titleHTML": "“ПРЯНЫЙ МАСТЕР”",
         "logo": "./assets/smm/logo-pryany.webp",
-        "goalHTML": "2 месяца<span> эксперементов</span> с разными форматами. Чего только не пережили эти чайные наборы",
+        "goalHTML": "2 месяца<span> экспериментов</span> с разными форматами. Чего только не пережили эти чайные наборы",
         "poster": "./assets/smm/slides/pryany-2.webp",
         "video": "./assets/reels/pryany-axe.mp4",
         "views": "23.200",

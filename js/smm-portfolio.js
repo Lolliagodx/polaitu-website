@@ -24,15 +24,27 @@
     if (!video) {
       video = document.createElement('video');
       video.className = 'smm-inline-video';
+      video.setAttribute('aria-hidden', 'true');
       video.autoplay = true; video.muted = true; video.defaultMuted = true; video.loop = true; video.playsInline = true;
       video.setAttribute('muted', ''); video.setAttribute('playsinline', ''); video.preload = 'none';
-      video.addEventListener('error', function () { if (video.getAttribute('src')) { video.hidden = true; image.hidden = false; } });
+      function showFrame() {
+        if (video.readyState < 2 || video.hidden) return;
+        if (video.requestVideoFrameCallback) {
+          if (video._readyFrame) video.cancelVideoFrameCallback(video._readyFrame);
+          video._readyFrame = video.requestVideoFrameCallback(function () { video.classList.add('is-frame-ready'); video._readyFrame = null; });
+        } else video.classList.add('is-frame-ready');
+      }
+      video.addEventListener('loadeddata', showFrame);
+      video.addEventListener('playing', showFrame);
+      video.addEventListener('error', function () { if (video.getAttribute('src')) { video.classList.remove('is-frame-ready'); video.hidden = true; image.hidden = false; } });
       card.appendChild(video); observedVideos.add(video);
       if (mediaObserver) mediaObserver.observe(video); else inView.add(video);
     }
     video.setAttribute('aria-label', title); video.poster = poster;
-    video.hidden = false; image.hidden = true;
+    video.hidden = false; image.hidden = false;
     if (video.dataset.inlineSource !== source) {
+      if (video._readyFrame && video.cancelVideoFrameCallback) video.cancelVideoFrameCallback(video._readyFrame);
+      video._readyFrame = null; video.classList.remove('is-frame-ready');
       video.pause(); video.removeAttribute('src'); video.load(); video.dataset.inlineSource = source;
     }
     syncVideo(video);
