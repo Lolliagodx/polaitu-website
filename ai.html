@@ -44,7 +44,7 @@
   <!-- /Yandex.Metrika counter -->
   <link rel="stylesheet" href="./css/site-shell.css?v=20261125-contacts" />
   <link rel="stylesheet" href="./css/ai-fonts.css?v=20261125-review" />
-  <link rel="stylesheet" href="./css/ai.css?v=20261125-viewport-height" />
+  <link rel="stylesheet" href="./css/ai.css?v=20261125-ai-media" />
   <link rel="stylesheet" href="./css/site-motion.css?v=20261125-inline" />
   <link rel="stylesheet" href="./css/figma-decor.css?v=20261124-2" />
   <link rel="stylesheet" href="./css/viewport-fix.css?v=20261125-inline" />
@@ -153,27 +153,27 @@
       <section class="ai-portfolio" id="aiWorks" aria-label="Наши работы с нейросетями">
         <img loading="lazy" decoding="async" class="ai-decor ai-portfolio__decor-top" src="./assets/decor/ai-portfolio.webp" alt="" aria-hidden="true" data-figma-node="2001:259" />
         <div class="ai-container ai-gallery">
-          <div class="ai-project" data-ai-title="Видео-обложка для онлайн-магазина">
+          <div class="ai-project" data-ai-title="Видео-обложка для онлайн-магазина" data-video-source="./assets/ai/videos/penguin.mp4">
             <img class="ai-project__image" src="./assets/ai/penguin.webp" alt="Видео-обложка для онлайн-магазина" width="600" height="450" loading="lazy" decoding="async" />
             <span class="ai-project__name">Видео-обложка для онлайн-магазина</span>
           </div>
-          <div class="ai-project" data-ai-title="Тизер-анонс стримов «Papa Paver»">
+          <div class="ai-project" data-ai-title="Тизер-анонс стримов «Papa Paver»" data-video-source="./assets/ai/videos/papa-paver.mp4">
             <img class="ai-project__image" src="./assets/ai/papa-paver.webp" alt="Тизер-анонс стримов «Papa Paver»" width="600" height="450" loading="lazy" decoding="async" />
             <span class="ai-project__name">Тизер-анонс стримов «Papa Paver»</span>
           </div>
-          <div class="ai-project" data-ai-title="Легенда о Крылатом Барсе «Миссия — Единство»">
+          <div class="ai-project" data-ai-title="Легенда о Крылатом Барсе «Миссия — Единство»" data-video-source="./assets/ai/videos/winged-leopard.mp4">
             <img class="ai-project__image" src="./assets/ai/winged-leopard.webp" alt="Легенда о Крылатом Барсе «Миссия — Единство»" width="600" height="450" loading="lazy" decoding="async" />
             <span class="ai-project__name">Легенда о Крылатом Барсе «Миссия — Единство»</span>
           </div>
-          <div class="ai-project" data-ai-title="Видео-экскурсия по центру «Муррмелад»">
+          <div class="ai-project" data-ai-title="Видео-экскурсия по центру «Муррмелад»" data-video-source="./assets/ai/videos/murrmelad.mp4">
             <img class="ai-project__image" src="./assets/ai/murrmelad.webp" alt="Видео-экскурсия по центру «Муррмелад»" width="600" height="450" loading="lazy" decoding="async" />
             <span class="ai-project__name">Видео-экскурсия по центру «Муррмелад»</span>
           </div>
-          <div class="ai-project" data-ai-title="Легенда о Двуглавом Орле «Миссия — Единство»">
+          <div class="ai-project" data-ai-title="Легенда о Двуглавом Орле «Миссия — Единство»" data-video-source="./assets/ai/videos/double-headed-eagle.mp4">
             <img class="ai-project__image" src="./assets/ai/double-headed-eagle.webp" alt="Легенда о Двуглавом Орле «Миссия — Единство»" width="600" height="450" loading="lazy" decoding="async" />
             <span class="ai-project__name">Легенда о Двуглавом Орле «Миссия — Единство»</span>
           </div>
-          <div class="ai-project" data-ai-title="Тизер к интерактивному спектаклю «Миссия — Единство»">
+          <div class="ai-project" data-ai-title="Тизер к интерактивному спектаклю «Миссия — Единство»" data-video-source="./assets/ai/videos/mission.mp4">
             <img class="ai-project__image" src="./assets/ai/mission.webp" alt="Тизер к интерактивному спектаклю «Миссия — Единство»" width="600" height="450" loading="lazy" decoding="async" />
             <span class="ai-project__name">Тизер к интерактивному спектаклю «Миссия — Единство»</span>
           </div>
@@ -183,9 +183,39 @@
       <section class="ai-enhance ai-container" aria-labelledby="aiEnhanceTitle">
         <h2 class="ai-title ai-title--center" id="aiEnhanceTitle">Улучшить <span>видео</span><br>с помощью ИИ</h2>
         <div class="ai-comparisons">
-          <figure class="ai-comparison"><h3 class="ai-comparison__title">Добавить<br>элементы</h3><img class="ai-comparison__image" src="./assets/ai/add-elements.webp" alt="Сравнение исходного кадра и кадра с добавленными элементами" width="394" height="650" loading="lazy" decoding="async" /></figure>
-          <figure class="ai-comparison"><h3 class="ai-comparison__title">Улучшить<br>качество</h3><img class="ai-comparison__image" src="./assets/ai/improve-quality.webp" alt="Сравнение качества изображения до и после обработки" width="394" height="650" loading="lazy" decoding="async" /></figure>
-          <figure class="ai-comparison"><h3 class="ai-comparison__title">Убрать<br>шумы</h3><img class="ai-comparison__image" src="./assets/ai/remove-noise.webp" alt="Сравнение изображения до и после удаления шума" width="394" height="650" loading="lazy" decoding="async" /></figure>
+          <figure class="ai-comparison">
+            <h3 class="ai-comparison__title">Добавить<br>элементы</h3>
+            <div class="ai-before-after" data-before-after>
+              <img class="ai-before-after__image" src="./assets/ai/comparisons/cowboys-after.png" alt="Кадр с добавленными элементами и новой атмосферой" width="365" height="650" loading="lazy" decoding="async" />
+              <div class="ai-before-after__before"><img class="ai-before-after__image" src="./assets/ai/comparisons/cowboys-before.png" alt="Исходный кадр до обработки" width="365" height="650" loading="lazy" decoding="async" /></div>
+              <span class="ai-before-after__label ai-before-after__label--before">До</span>
+              <span class="ai-before-after__label ai-before-after__label--after">После</span>
+              <span class="ai-before-after__handle" aria-hidden="true"></span>
+              <input class="ai-before-after__range" type="range" min="0" max="100" value="50" aria-label="Сравнить кадр до и после добавления элементов" />
+            </div>
+          </figure>
+          <figure class="ai-comparison">
+            <h3 class="ai-comparison__title">Улучшить<br>качество</h3>
+            <div class="ai-before-after" data-before-after>
+              <img class="ai-before-after__image" src="./assets/ai/comparisons/portrait-after.png" alt="Портрет после улучшения качества" width="394" height="650" loading="lazy" decoding="async" />
+              <div class="ai-before-after__before"><img class="ai-before-after__image" src="./assets/ai/comparisons/portrait-before.png" alt="Исходный портрет до обработки" width="394" height="650" loading="lazy" decoding="async" /></div>
+              <span class="ai-before-after__label ai-before-after__label--before">До</span>
+              <span class="ai-before-after__label ai-before-after__label--after">После</span>
+              <span class="ai-before-after__handle" aria-hidden="true"></span>
+              <input class="ai-before-after__range" type="range" min="0" max="100" value="50" aria-label="Сравнить качество портрета до и после обработки" />
+            </div>
+          </figure>
+          <figure class="ai-comparison">
+            <h3 class="ai-comparison__title">Убрать<br>шумы</h3>
+            <div class="ai-before-after" data-before-after>
+              <img class="ai-before-after__image" src="./assets/ai/comparisons/jetski-after.png" alt="Кадр с гидроциклом после удаления шумов" width="394" height="650" loading="lazy" decoding="async" />
+              <div class="ai-before-after__before"><img class="ai-before-after__image" src="./assets/ai/comparisons/jetski-before.png" alt="Исходный кадр с гидроциклом до обработки" width="394" height="650" loading="lazy" decoding="async" /></div>
+              <span class="ai-before-after__label ai-before-after__label--before">До</span>
+              <span class="ai-before-after__label ai-before-after__label--after">После</span>
+              <span class="ai-before-after__handle" aria-hidden="true"></span>
+              <input class="ai-before-after__range" type="range" min="0" max="100" value="50" aria-label="Сравнить кадр до и после удаления шумов" />
+            </div>
+          </figure>
         </div>
       </section>
       <section class="ai-services ai-container" aria-labelledby="aiServicesTitle">
@@ -327,7 +357,7 @@
   <script src="./js/project-request.js?v=20261123-1"></script>
   <script src="./js/smm.js"></script>
   <script src="./js/floating-phone.js?v=20261125-review"></script>
-  <script src="./js/ai.js?v=20261125-inline"></script>
+  <script src="./js/ai.js?v=20261125-ai-media"></script>
   <script src="./js/site-motion.js?v=20261125-inline"></script>
   <script src="./js/site-common.js?v=20261125-contacts"></script>
 </body>

@@ -13,10 +13,13 @@
 .ai-hero__cta:hover { background: rgb(255 168 0 / 48%); }
 .ai-portfolio { position: relative; max-width: 1440px; margin-inline: auto; padding-top: 263px; padding-bottom: 438px; overflow: hidden; }
 .ai-gallery { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); column-gap: 58px; row-gap: 70px; }
-.ai-project { position: relative; display: block; width: 100%; height: 445px; overflow: hidden; padding: 0; border: 0; border-radius: 20px; background: #101010; cursor: pointer; }
+.ai-project { position: relative; display: block; width: 100%; height: 445px; overflow: hidden; padding: 0; border: 0; border-radius: 20px; background: #101010; cursor: pointer; isolation: isolate; }
 .ai-project__image { display: block; width: 100%; height: 100%; object-fit: cover; }
-.ai-project__name { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 32px; background: rgb(0 0 0 / 65%); color: #fff; font: inherit; font-size: 26px; line-height: 1.35; text-align: center; opacity: 0; transition: opacity .2s; }
-.ai-project:hover .ai-project__name, .ai-project:focus-visible .ai-project__name { opacity: 1; }
+.ai-project__image, .ai-project__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ai-project__video { z-index: 1; display: block; opacity: 0; transition: opacity .22s ease; }
+.ai-project__video.is-frame-ready { opacity: 1; }
+.ai-project__name { position: absolute; z-index: 2; inset: auto 0 0; display: flex; align-items: flex-end; min-height: 42%; padding: 62px 28px 24px; background: linear-gradient(transparent,rgb(0 0 0 / 76%)); color: #fff; font: inherit; font-size: 23px; line-height: 1.35; text-align: left; opacity: 1; pointer-events: none; transition: opacity .22s ease; }
+.ai-project.is-playing .ai-project__name { opacity: 0; }
 .ai-decor { position: absolute; pointer-events: none; user-select: none; }
 .ai-portfolio__decor-top { width: 390px; top: 0; right: 0; }
 .ai-portfolio__decor-bottom { width: 660px; bottom: 0; left: 0; }
@@ -24,7 +27,16 @@
 .ai-comparisons { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 41px; margin-top: 129px; }
 .ai-comparison { margin: 0; }
 .ai-comparison__title { min-height: 76px; margin: 0 0 17px; font-size: 32px; line-height: 38px; font-weight: 400; text-align: center; }
-.ai-comparison__image { display: block; width: 100%; aspect-ratio: 394 / 650; border-radius: 20px; object-fit: cover; }
+.ai-before-after { --split:50%; position: relative; width: 100%; aspect-ratio: 394 / 650; overflow: hidden; border-radius: 20px; background:#1a1a1a; isolation:isolate; touch-action:pan-y; }
+.ai-before-after__image { display:block; width:100%; height:100%; object-fit:cover; user-select:none; pointer-events:none; }
+.ai-before-after__before { position:absolute; z-index:1; inset:0; clip-path:inset(0 calc(100% - var(--split)) 0 0); }
+.ai-before-after__label { position:absolute; z-index:3; top:18px; padding:8px 13px; border:1px solid rgb(255 255 255 / 24%); border-radius:999px; background:rgb(12 12 12 / 58%); color:#fff; font-size:14px; line-height:1; font-weight:500; text-transform:uppercase; letter-spacing:.08em; pointer-events:none; backdrop-filter:blur(9px); }
+.ai-before-after__label--before { left:16px; }
+.ai-before-after__label--after { right:16px; }
+.ai-before-after__handle { position:absolute; z-index:2; top:0; bottom:0; left:var(--split); width:3px; background:#fff; box-shadow:0 0 16px rgb(0 0 0 / 55%); transform:translateX(-50%); pointer-events:none; }
+.ai-before-after__handle::after { content:'↔'; position:absolute; top:50%; left:50%; display:grid; place-items:center; width:48px; height:48px; border:2px solid #fff; border-radius:50%; background:#ffa800; color:#101010; font:700 25px/1 Arial,sans-serif; box-shadow:0 5px 20px rgb(0 0 0 / 35%); transform:translate(-50%,-50%); }
+.ai-before-after__range { position:absolute; z-index:4; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; }
+.ai-before-after:focus-within { outline:3px solid #ffa800; outline-offset:5px; }
 .ai-services { position: relative; padding-top: 206px; }
 .ai-services__decor { z-index: 0; width: 440px; right: -88px; top: 0; }
 .ai-services .ai-title { position: relative; z-index: 1; }
@@ -62,7 +74,7 @@
 .ai-contact__status { margin: 0; font-size: 16px; line-height: 23px; }
 .ai-page :focus-visible { outline: 3px solid #ffa800; outline-offset: 5px; }
 @media (hover: none) {
-  .ai-project__name { inset: auto 0 0; padding: 16px; font-size: 17px; opacity: 1; background: linear-gradient(transparent,rgb(0 0 0 / 80%)); }
+  .ai-project__name { min-height:34%; padding:42px 16px 16px; font-size:17px; }
 }
 @media (max-width: 1100px) {
   .ai-project { height: auto; aspect-ratio: 4 / 3; }
@@ -132,10 +144,9 @@
   .ai-contact__title { font-size: 29px; line-height: 37px; }
   .ai-contact__button { width: 100%; }
 }
-@media (prefers-reduced-motion: reduce) { .ai-project__name { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .ai-project__name, .ai-project__video { transition: none; } }
 @media (max-width: 380px) { .ai-service__title { font-size: 20px; line-height: 26px; } }
 
-.ai-project { cursor:default; }
 @media (max-height:600px) {
   .ai-hero__title { padding-top:24px; font-size:clamp(26px,5vh,40px); line-height:1.25; }
   .ai-hero__cta { bottom:24px; min-height:60px; font-size:20px; line-height:26px; }
