@@ -176,7 +176,7 @@ window.POLAITU_SMM_CASES = [
         "titleHTML": "“Geely”<br>(ООО “Джили-Моторс”)",
         "logo": "./assets/smm/logo-geely.webp",
         "goalHTML": "Успели поработать с крупными брендами <br>машин",
-        "poster": "./assets/smm/geely-1.webp",
+        "poster": "./assets/smm/geely-cover.webp",
         "video": "./assets/reels/geely-cooling.mp4",
         "views": "82.000",
         "metricLabel": "Охваты",

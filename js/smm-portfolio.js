@@ -41,10 +41,6 @@
     mediaStates.set(card, state); mediaCards.add(state);
     card.setAttribute('role', 'button'); card.tabIndex = 0;
     card.setAttribute('aria-pressed', 'false');
-    var hint = document.createElement('span');
-    hint.className = 'smm-media-play'; hint.setAttribute('aria-hidden', 'true');
-    hint.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
-    card.appendChild(hint);
     card.addEventListener('pointerenter', function (event) {
       if (event.pointerType !== 'mouse') return;
       state.wantsPlay = true; syncVideo(state);
@@ -137,7 +133,7 @@
           if (revision !== state.revision) return;
           state.layers.filter(function (old) { return old !== layer; }).forEach(release);
           state.layers = [layer];
-        }, reducedMotion.matches ? 0 : 300);
+        }, reducedMotion.matches ? 0 : 480);
       });
     }
     if (!previous || reducedMotion.matches) { layer.classList.add('is-current'); reveal(); }
@@ -200,7 +196,7 @@
           if (element._slideAnimation) element._slideAnimation.cancel();
           if (element.animate) element._slideAnimation = element.animate([
             { opacity: 0 }, { opacity: 1 }
-          ], { duration: 280, easing: 'ease-out' });
+          ], { duration: 360, easing: 'ease-out' });
         });
       }
       initialized = true;
