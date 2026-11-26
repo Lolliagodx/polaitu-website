@@ -111,7 +111,7 @@ window.POLAITU_AI_CASES = [
       var paragraph = document.createElement('p'); paragraph.textContent = text; description.appendChild(paragraph);
     });
     video.poster = card.querySelector('img').getAttribute('src');
-    video.src = card.dataset.videoSource;
+    video.src = card.dataset.videoSource + '?v=20261126-audio';
     video.controls = false; video.defaultMuted = false; video.removeAttribute('muted'); video.muted = false; video.volume = 1;
     if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
     document.querySelectorAll('video').forEach(function (other) { if (other !== video) other.pause(); });
