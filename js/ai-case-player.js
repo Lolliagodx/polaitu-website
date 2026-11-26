@@ -79,11 +79,13 @@ window.POLAITU_AI_CASES = [
   var fullscreenTimer;
   function collapseInPage() {
     dialog.classList.remove('is-expanded');
+    video.controls = false;
     fullscreen.setAttribute('aria-label', 'На весь экран');
   }
   function expandInPage() {
     if (!dialog.open) return;
     dialog.classList.add('is-expanded');
+    video.controls = true;
     fullscreen.setAttribute('aria-label', 'Свернуть видео');
     fullscreen.focus({ preventScroll: true });
   }
@@ -151,13 +153,14 @@ window.POLAITU_AI_CASES = [
   });
   play.addEventListener('click', start);
   video.addEventListener('click', function (event) {
+    if (video.controls) return;
     if (video.paused) start(); else video.pause();
   });
   ['play','pause','ended'].forEach(function (name) { video.addEventListener(name, syncControls); });
   fullscreen.addEventListener('click', function () {
     if (dialog.classList.contains('is-expanded')) { collapseInPage(); return; }
     if (document.fullscreenElement) { document.exitFullscreen().catch(function () {}); return; }
-    video.controls = false;
+    video.controls = true;
     // Embedded browsers can refuse native fullscreen; still fill their viewport.
     clearTimeout(fullscreenTimer);
     fullscreenTimer = setTimeout(function () {
@@ -174,6 +177,11 @@ window.POLAITU_AI_CASES = [
       player.webkitRequestFullscreen();
     } else expandInPage();
   });
+  document.addEventListener('fullscreenchange', function () {
+    video.controls = !!document.fullscreenElement || dialog.classList.contains('is-expanded');
+  });
+  video.addEventListener('webkitbeginfullscreen', function () { video.controls = true; });
+  video.addEventListener('webkitendfullscreen', function () { video.controls = dialog.classList.contains('is-expanded'); });
   dialog.addEventListener('cancel', function (event) {
     if (dialog.classList.contains('is-expanded')) { event.preventDefault(); collapseInPage(); }
   });
