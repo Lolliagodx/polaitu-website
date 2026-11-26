@@ -155,3 +155,12 @@
   .ai-hero__title { padding-top:24px; font-size:clamp(26px,5vh,40px); line-height:1.25; }
   .ai-hero__cta { bottom:24px; min-height:60px; font-size:20px; line-height:26px; }
 }
+
+/* AI projects: playback cue replaces the duplicate title overlay. */
+.ai-project__play { position:absolute; inset:0; z-index:2; display:grid; place-items:center; pointer-events:none; opacity:1; transition:opacity .22s ease; }
+.ai-project__play svg { box-sizing:content-box; width:26px; height:26px; padding:17px; border:1px solid rgb(255 255 255 / 28%); border-radius:50%; background:rgb(0 0 0 / 55%); color:#ffa800; backdrop-filter:blur(8px); }
+.ai-project.is-playing .ai-project__play { opacity:0; }
+/* Match the quiet half-and-half comparison in the supplied Figma reference. */
+.ai-before-after__handle { width:1px; background:rgb(255 255 255 / 25%); box-shadow:none; }
+.ai-before-after__handle::after { display:none; }
+@media(prefers-reduced-motion:reduce) { .ai-project__play { transition:none; } }
