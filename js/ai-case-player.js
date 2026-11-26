@@ -94,7 +94,7 @@ window.POLAITU_AI_CASES = [
   }
   function start() {
     video.defaultMuted = false; video.removeAttribute('muted'); video.muted = false;
-    video.controls = true;
+    video.controls = false;
     video.play().then(syncControls).catch(syncControls);
   }
   function open(card) {
@@ -110,6 +110,7 @@ window.POLAITU_AI_CASES = [
     item.paragraphs.forEach(function (text) {
       var paragraph = document.createElement('p'); paragraph.textContent = text; description.appendChild(paragraph);
     });
+    video.parentElement.style.setProperty('--ai-video-ratio', '1.7777777778');
     video.poster = card.querySelector('img').getAttribute('src');
     video.src = card.dataset.videoSource + '?v=20261126-audio';
     video.controls = false; video.defaultMuted = false; video.removeAttribute('muted'); video.muted = false; video.volume = 1;
@@ -145,32 +146,33 @@ window.POLAITU_AI_CASES = [
       if (rect.bottom > 0 && rect.top < window.innerHeight) hero.play().catch(function () {});
     }
   });
+  video.addEventListener('loadedmetadata', function () {
+    if (video.videoWidth && video.videoHeight) video.parentElement.style.setProperty('--ai-video-ratio', video.videoWidth / video.videoHeight);
+  });
   play.addEventListener('click', start);
   video.addEventListener('click', function (event) {
-    // The native control bar handles its own play/pause and seeking actions.
-    if (event.offsetY > video.clientHeight - 50 && video.controls) return;
     if (video.paused) start(); else video.pause();
   });
   ['play','pause','ended'].forEach(function (name) { video.addEventListener(name, syncControls); });
   fullscreen.addEventListener('click', function () {
     if (dialog.classList.contains('is-expanded')) { collapseInPage(); return; }
-    video.controls = true;
+    if (document.fullscreenElement) { document.exitFullscreen().catch(function () {}); return; }
+    video.controls = false;
     // Embedded browsers can refuse native fullscreen; still fill their viewport.
     clearTimeout(fullscreenTimer);
     fullscreenTimer = setTimeout(function () {
       if (!document.fullscreenElement && !video.webkitDisplayingFullscreen) expandInPage();
     }, 400);
-    if (video.webkitEnterFullscreen) {
+    var player = video.parentElement;
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(function () {});
+    } else if (player.requestFullscreen) {
+      player.requestFullscreen().catch(expandInPage);
+    } else if (video.webkitEnterFullscreen) {
       video.webkitEnterFullscreen();
-    } else if (video.requestFullscreen) {
-      video.requestFullscreen().catch(function () {
-        var player = video.parentElement;
-        if (player.requestFullscreen) player.requestFullscreen().catch(expandInPage);
-        else expandInPage();
-      });
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    }
+    } else if (player.webkitRequestFullscreen) {
+      player.webkitRequestFullscreen();
+    } else expandInPage();
   });
   dialog.addEventListener('cancel', function (event) {
     if (dialog.classList.contains('is-expanded')) { event.preventDefault(); collapseInPage(); }
