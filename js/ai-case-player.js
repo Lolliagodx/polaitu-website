@@ -76,12 +76,24 @@ window.POLAITU_AI_CASES = [
   var close = dialog.querySelector('[data-ai-case-close]');
   var fullscreen = dialog.querySelector('[data-ai-case-fullscreen]');
   var previousFocus, previousBodyOverflow, previousRootOverflow;
+  var fullscreenTimer;
+  function collapseInPage() {
+    dialog.classList.remove('is-expanded');
+    fullscreen.setAttribute('aria-label', 'На весь экран');
+  }
+  function expandInPage() {
+    if (!dialog.open) return;
+    dialog.classList.add('is-expanded');
+    fullscreen.setAttribute('aria-label', 'Свернуть видео');
+    fullscreen.focus({ preventScroll: true });
+  }
   function syncControls() {
     var playing = !video.paused && !video.ended;
     play.hidden = playing;
-    fullscreen.hidden = !playing;
+    fullscreen.hidden = false;
   }
   function start() {
+    video.defaultMuted = false; video.removeAttribute('muted'); video.muted = false;
     video.controls = true;
     video.play().then(syncControls).catch(syncControls);
   }
@@ -100,7 +112,7 @@ window.POLAITU_AI_CASES = [
     });
     video.poster = card.querySelector('img').getAttribute('src');
     video.src = card.dataset.videoSource;
-    video.controls = false; video.muted = false;
+    video.controls = false; video.defaultMuted = false; video.removeAttribute('muted'); video.muted = false; video.volume = 1;
     if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
     document.querySelectorAll('video').forEach(function (other) { if (other !== video) other.pause(); });
     document.body.style.overflow = 'hidden'; document.documentElement.style.overflow = 'hidden';
@@ -122,6 +134,7 @@ window.POLAITU_AI_CASES = [
   close.addEventListener('click', function () { dialog.close(); });
   dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
   dialog.addEventListener('close', function () {
+    clearTimeout(fullscreenTimer); collapseInPage();
     video.pause(); video.removeAttribute('src'); video.load(); video.controls = false;
     document.body.style.overflow = previousBodyOverflow; document.documentElement.style.overflow = previousRootOverflow;
     document.body.classList.remove('ai-case-open');
@@ -140,8 +153,27 @@ window.POLAITU_AI_CASES = [
   });
   ['play','pause','ended'].forEach(function (name) { video.addEventListener(name, syncControls); });
   fullscreen.addEventListener('click', function () {
-    if (video.requestFullscreen) video.requestFullscreen().catch(function () {});
-    else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+    if (dialog.classList.contains('is-expanded')) { collapseInPage(); return; }
+    video.controls = true;
+    // Embedded browsers can refuse native fullscreen; still fill their viewport.
+    clearTimeout(fullscreenTimer);
+    fullscreenTimer = setTimeout(function () {
+      if (!document.fullscreenElement && !video.webkitDisplayingFullscreen) expandInPage();
+    }, 400);
+    if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen();
+    } else if (video.requestFullscreen) {
+      video.requestFullscreen().catch(function () {
+        var player = video.parentElement;
+        if (player.requestFullscreen) player.requestFullscreen().catch(expandInPage);
+        else expandInPage();
+      });
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    }
+  });
+  dialog.addEventListener('cancel', function (event) {
+    if (dialog.classList.contains('is-expanded')) { event.preventDefault(); collapseInPage(); }
   });
   document.addEventListener('visibilitychange', function () { if (document.hidden) video.pause(); });
 })();
