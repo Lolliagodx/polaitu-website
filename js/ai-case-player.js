@@ -77,23 +77,26 @@ window.POLAITU_AI_CASES = [
   var fullscreen = dialog.querySelector('[data-ai-case-fullscreen]');
   var previousFocus, previousBodyOverflow, previousRootOverflow;
   var fullscreenTimer;
+  var fullscreenWasActive = false, lastFullscreenExit = -1000;
   function collapseInPage() {
     dialog.classList.remove('is-expanded');
     video.controls = false;
     fullscreen.setAttribute('aria-label', 'На весь экран');
+    syncControls();
   }
   function expandInPage() {
     if (!dialog.open) return;
     dialog.classList.add('is-expanded');
     video.controls = true;
     fullscreen.setAttribute('aria-label', 'Свернуть видео');
-    fullscreen.focus({ preventScroll: true });
+    syncControls();
   }
   function syncControls() {
     var playing = !video.paused && !video.ended;
-    play.hidden = playing;
+    var nativeScreen = !!document.fullscreenElement || !!video.webkitDisplayingFullscreen || dialog.classList.contains('is-expanded');
+    play.hidden = playing || nativeScreen;
     video.parentElement.classList.toggle('is-playing', playing);
-    fullscreen.hidden = false;
+    fullscreen.hidden = nativeScreen;
   }
   function start() {
     video.defaultMuted = false; video.removeAttribute('muted'); video.muted = false;
@@ -181,29 +184,32 @@ window.POLAITU_AI_CASES = [
   fullscreen.addEventListener('click', function () {
     if (dialog.classList.contains('is-expanded')) { collapseInPage(); return; }
     if (document.fullscreenElement) { document.exitFullscreen().catch(function () {}); return; }
+    if (video.paused) start();
     video.controls = true;
     // Embedded browsers can refuse native fullscreen; still fill their viewport.
     clearTimeout(fullscreenTimer);
     fullscreenTimer = setTimeout(function () {
       if (!document.fullscreenElement && !video.webkitDisplayingFullscreen) expandInPage();
     }, 400);
-    var player = video.parentElement;
-    if (document.fullscreenElement) {
-      document.exitFullscreen().catch(function () {});
-    } else if (player.requestFullscreen) {
-      player.requestFullscreen().catch(expandInPage);
+    if (video.requestFullscreen) {
+      video.requestFullscreen().catch(expandInPage);
     } else if (video.webkitEnterFullscreen) {
-      video.webkitEnterFullscreen();
-    } else if (player.webkitRequestFullscreen) {
-      player.webkitRequestFullscreen();
+      try { video.webkitEnterFullscreen(); } catch (error) { expandInPage(); }
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
     } else expandInPage();
   });
   document.addEventListener('fullscreenchange', function () {
+    var active = !!document.fullscreenElement;
+    if (!active && fullscreenWasActive) lastFullscreenExit = performance.now();
+    fullscreenWasActive = active;
     video.controls = !!document.fullscreenElement || dialog.classList.contains('is-expanded');
+    syncControls();
   });
-  video.addEventListener('webkitbeginfullscreen', function () { video.controls = true; });
-  video.addEventListener('webkitendfullscreen', function () { video.controls = dialog.classList.contains('is-expanded'); });
+  video.addEventListener('webkitbeginfullscreen', function () { fullscreenWasActive = true; video.controls = true; syncControls(); });
+  video.addEventListener('webkitendfullscreen', function () { fullscreenWasActive = false; lastFullscreenExit = performance.now(); video.controls = dialog.classList.contains('is-expanded'); syncControls(); });
   dialog.addEventListener('cancel', function (event) {
+    if (fullscreenWasActive || performance.now() - lastFullscreenExit < 300) { event.preventDefault(); return; }
     if (dialog.classList.contains('is-expanded')) { event.preventDefault(); collapseInPage(); }
   });
   document.addEventListener('visibilitychange', function () { if (document.hidden) video.pause(); });

@@ -182,7 +182,6 @@
 .ai-case-popup .video-popup__description p + p { margin-top:18px; }
 .ai-case-popup .video-popup__fullscreen-btn { display:flex; width:37px; height:37px; bottom:20px; right:20px; color:#fff; }
 .ai-case-popup .video-popup__fullscreen-btn svg { display:block; width:37px; height:37px; }
-.ai-case-popup .popup-video::-webkit-media-controls-fullscreen-button { display:none; }
 .ai-case-popup .popup-video:fullscreen,.ai-case-popup .video-popup__player:fullscreen { width:100vw; height:100vh; max-width:none; max-height:none; border:0; border-radius:0; background:#000; object-fit:contain; }
 .ai-page .ai-case-popup.is-expanded[open] { padding:0; }
 .ai-case-popup.is-expanded .video-popup__content { width:100% !important; max-width:none; height:100dvh !important; max-height:none; padding:0 !important; border:0; border-radius:0; overflow:hidden; }
@@ -241,3 +240,8 @@
  .ai-project,.ai-project__overlay,.ai-case-popup .video-popup__player::after { transition:none; }
  .ai-project:hover,.ai-project:focus-visible,.ai-project.is-preview-active { transform:none; }
 }
+
+/* Fullscreen uses only the browser video controls, as on the original Video page. */
+.ai-case-popup.is-expanded :is(.video-popup__play-btn,.video-popup__fullscreen-btn) { display:none !important; }
+.ai-case-popup.is-expanded .video-popup__player::after { display:none; }
+.ai-case-popup.is-expanded .video-popup__close { display:flex !important; position:fixed; top:16px; right:16px; }
