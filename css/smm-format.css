@@ -53,3 +53,11 @@
  .smm-stat__value { font-size:46px; }
  .smm-stat__label { font-size:23px; line-height:30px; }
 }
+
+.smm-more { position:relative; }
+.smm-more__title,.smm-gallery { position:relative; z-index:1; }
+.smm-case__decor--geely-head,.smm-more__decor { display:none; }
+@media (min-width:1101px) {
+ .smm-case__decor--geely-head { display:block; left:auto; right:calc(-130px - var(--decor-gutter)); top:0; width:360px; }
+ .smm-more__decor { display:block; left:auto; right:calc(-240px - var(--decor-gutter)); top:-230px; width:600px; rotate:-35deg; }
+}
