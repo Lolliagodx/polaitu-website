@@ -17,6 +17,10 @@
     '<feComposite in="SourceGraphic" in2="keep" operator="in"/></filter></defs>';
   document.body.appendChild(iconFilters);
   var header = document.querySelector('.site-header');
+  function syncHeaderBacking() { if (header) header.classList.toggle('site-header--scrolled', window.scrollY > 10); }
+  syncHeaderBacking();
+  window.addEventListener('scroll', syncHeaderBacking, { passive:true });
+  window.addEventListener('pageshow', syncHeaderBacking);
   var nav = document.getElementById('mobileNav');
   var burger = document.getElementById('burgerBtn');
   var closeButton = document.getElementById('mobileNavClose');

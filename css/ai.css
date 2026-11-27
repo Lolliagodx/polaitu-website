@@ -203,3 +203,11 @@
 
 /* Preserve the complete frame when the player fills the screen. */
 .ai-case-popup.is-expanded .popup-video, .ai-case-popup .video-popup__player:fullscreen .popup-video { object-fit:contain; }
+
+/* Still preview and dimmed hover, matching the original Video cards. */
+.ai-project__image { transition:filter .3s ease,transform .3s ease; }
+.ai-project__play { opacity:0; background:rgb(0 0 0 / 28%); }
+.ai-project:hover .ai-project__play,.ai-project:focus-visible .ai-project__play { opacity:1; }
+.ai-project:hover .ai-project__image { transform:scale(1.02); }
+@media (hover:none) { .ai-project__play { opacity:1; } }
+@media (prefers-reduced-motion:reduce) { .ai-project__image { transition:none; } }

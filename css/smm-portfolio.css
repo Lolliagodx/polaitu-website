@@ -235,3 +235,13 @@
 /* Cover and video use the same crop, avoiding a zoom jump when playback starts. */
 .smm-page .smm-media-layer > img { transform:none !important; }
 @media (prefers-reduced-motion:reduce) { .smm-media-layer,.smm-page .smm-media-layer .smm-inline-video { transition:none; } }
+
+/* The next action stays outside the interactive video surface. */
+.smm-case__media { position:relative; min-width:0; align-self:start; }
+.smm-case__next { position:absolute; z-index:4; top:50%; right:10px; transform:translateY(-50%); display:grid; place-items:center; width:44px; height:44px; padding:0; border:1px solid rgb(255 255 255 / 45%); border-radius:50%; background:rgb(0 0 0 / 65%); color:#ffa800; cursor:pointer; transition:background .2s, translate .2s; }
+.smm-case__next:hover { background:#342400; translate:3px 0; }
+.smm-case__next:focus-visible { outline:3px solid #ffa800; outline-offset:3px; }
+
+.smm-hero__bubble { animation:smm-bubble-enter .5s cubic-bezier(.2,.8,.2,1) 1.5s both; transform-origin:80% 0; }
+@keyframes smm-bubble-enter { from { opacity:0; transform:translateY(-10px) scale(.94); } to { opacity:1; transform:translateY(0) scale(1); } }
+@media (prefers-reduced-motion:reduce) { .smm-hero__bubble { animation:none; } }

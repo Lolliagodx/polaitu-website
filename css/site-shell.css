@@ -70,3 +70,7 @@
 .figma-shell .contacts-dropdown__socials { gap:14px; }
 .figma-shell .contacts-dropdown__social-link { width:36px; height:36px; }
 .figma-shell .site-header .contacts-dropdown__social-icon { width:30px; height:30px; filter:url(#polaituContactMatte); }
+
+/* Transparent at the top; solid backing only after scrolling. */
+.figma-shell .site-header:not(.site-header--scrolled) { background:transparent; backdrop-filter:none; }
+.figma-shell .site-header.site-header--scrolled { background:#000; }
