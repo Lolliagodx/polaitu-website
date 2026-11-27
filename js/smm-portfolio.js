@@ -216,7 +216,7 @@
       nextButton.setAttribute('aria-label', 'Следующий ролик');
       nextButton.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       nextButton.addEventListener('click', function () { show(current + 1); });
-      media.appendChild(nextButton);
+      root.querySelector('.smm-case__body').appendChild(nextButton);
     }
     root.addEventListener('keydown', function (event) {
       if (entry.slides.length < 2) return;

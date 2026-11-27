@@ -2,6 +2,7 @@
 window.POLAITU_AI_CASES = [
   {
     "file": "penguin.mp4",
+    "previewTitle": "Видео обложка",
     "title": "Видео-обложка для онлайн-магазина",
     "format": "видео-обложка",
     "paragraphs": [
@@ -13,6 +14,7 @@ window.POLAITU_AI_CASES = [
   },
   {
     "file": "papa-paver.mp4",
+    "previewTitle": "Papa Paver",
     "title": "Тизер-анонс стримов “Papa Paver”",
     "format": "тизер-анонс",
     "paragraphs": [
@@ -24,6 +26,7 @@ window.POLAITU_AI_CASES = [
   },
   {
     "file": "winged-leopard.mp4",
+    "previewTitle": "Миссия единство",
     "title": "Легенда о Крылатом Барсе \"Миссия - Единство\"",
     "format": "анимационный эпизод",
     "paragraphs": [
@@ -35,6 +38,7 @@ window.POLAITU_AI_CASES = [
   },
   {
     "file": "murrmelad.mp4",
+    "previewTitle": "Муррмелад",
     "title": "Видео-экскурсия по детскому центру \"Муррмелад\"",
     "format": "видео-экскурсия",
     "paragraphs": [
@@ -46,6 +50,7 @@ window.POLAITU_AI_CASES = [
   },
   {
     "file": "double-headed-eagle.mp4",
+    "previewTitle": "Миссия единство",
     "title": "Легенда о Двуглавом Орле \"Миссия - Единство\"",
     "format": "анимационный эпизод",
     "paragraphs": [
@@ -57,6 +62,7 @@ window.POLAITU_AI_CASES = [
   },
   {
     "file": "mission.mp4",
+    "previewTitle": "Миссия единство",
     "title": "Тизер к интерактивному спектаклю \"Миссия - Единство\"",
     "format": "тизер спектакля",
     "paragraphs": [
@@ -146,7 +152,7 @@ window.POLAITU_AI_CASES = [
     card.setAttribute('aria-label', 'Открыть ролик: ' + (item ? item.title : card.dataset.aiTitle));
     var overlay = document.createElement('span'); overlay.className = 'ai-project__overlay'; overlay.setAttribute('aria-hidden', 'true');
     var caption = document.createElement('span'); caption.className = 'ai-project__caption';
-    caption.textContent = item ? item.title : card.dataset.aiTitle;
+    caption.textContent = item ? (item.previewTitle || item.title) : card.dataset.aiTitle;
     overlay.appendChild(caption); card.appendChild(overlay);
     card.addEventListener('click', function (event) {
       if ((event.pointerType === 'touch' || touchLike.matches) && activePreview !== card) {
