@@ -92,6 +92,7 @@ window.POLAITU_AI_CASES = [
   function syncControls() {
     var playing = !video.paused && !video.ended;
     play.hidden = playing;
+    video.parentElement.classList.toggle('is-playing', playing);
     fullscreen.hidden = false;
   }
   function start() {
@@ -100,6 +101,7 @@ window.POLAITU_AI_CASES = [
     video.play().then(syncControls).catch(syncControls);
   }
   function open(card) {
+    clearPreview();
     var item = window.POLAITU_AI_CASES.find(function (entry) { return card.dataset.videoSource.endsWith(entry.file); });
     if (!item) return;
     previousFocus = card;
@@ -124,12 +126,31 @@ window.POLAITU_AI_CASES = [
     dialog.querySelector('.video-popup__content').scrollTop = 0;
     close.focus({ preventScroll: true });
   }
+  var touchLike = window.matchMedia('(hover: none), (pointer: coarse)');
+  var activePreview = null;
+  function clearPreview() {
+    if (activePreview) activePreview.classList.remove('is-preview-active');
+    activePreview = null;
+  }
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('.ai-project')) clearPreview();
+  });
+  window.addEventListener('resize', function () { if (!touchLike.matches) clearPreview(); });
   document.querySelectorAll('.ai-project[data-video-source]').forEach(function (card) {
     var item = window.POLAITU_AI_CASES.find(function (entry) { return card.dataset.videoSource.endsWith(entry.file); });
     card.setAttribute('role', 'button'); card.tabIndex = 0;
     card.setAttribute('aria-haspopup', 'dialog'); card.setAttribute('aria-controls', 'aiCaseDialog');
     card.setAttribute('aria-label', 'Открыть ролик: ' + (item ? item.title : card.dataset.aiTitle));
-    card.addEventListener('click', function () { open(card); });
+    var overlay = document.createElement('span'); overlay.className = 'ai-project__overlay'; overlay.setAttribute('aria-hidden', 'true');
+    var caption = document.createElement('span'); caption.className = 'ai-project__caption';
+    caption.textContent = item ? item.title : card.dataset.aiTitle;
+    overlay.appendChild(caption); card.appendChild(overlay);
+    card.addEventListener('click', function (event) {
+      if ((event.pointerType === 'touch' || touchLike.matches) && activePreview !== card) {
+        clearPreview(); activePreview = card; card.classList.add('is-preview-active'); return;
+      }
+      clearPreview(); open(card);
+    });
     card.addEventListener('keydown', function (event) {
       if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(card); }
     });

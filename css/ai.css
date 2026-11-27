@@ -216,3 +216,28 @@
 .ai-main { padding-top:0; }
 .ai-hero { height:100vh; height:100dvh; }
 .ai-hero__title { top:var(--ai-header-height); }
+
+/* Use the original Video page identity: quiet still, dimmed glass title on hover. */
+.ai-project { transition:transform .3s ease,z-index .3s ease; }
+.ai-project:hover,.ai-project:focus-visible,.ai-project.is-preview-active { transform:translateY(-10px) scale(1.02); z-index:3; }
+.ai-project:hover .ai-project__image { transform:none; }
+.ai-project__overlay { position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center; padding:24px; background:rgb(0 0 0 / 26%); opacity:0; transition:opacity .3s ease; pointer-events:none; }
+.ai-project__caption { display:block; max-width:100%; padding:20px 28px; border:1px solid rgb(255 255 255 / 25%); border-radius:24px; background:linear-gradient(120deg,rgb(46 70 75 / 78%),rgb(35 35 35 / 88%)); box-shadow:inset 0 1px 4px rgb(255 255 255 / 14%),0 4px 30px rgb(0 0 0 / 12%); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); font:300 clamp(20px,1.8vw,30px)/1.25 Bounded,sans-serif; text-align:center; color:#fff; overflow-wrap:break-word; }
+.ai-project:hover .ai-project__overlay,.ai-project:focus-visible .ai-project__overlay,.ai-project.is-preview-active .ai-project__overlay { opacity:1; }
+.ai-case-popup .video-popup__close { top:40px; right:40px; }
+.ai-case-popup .video-popup__title { margin-bottom:20px; line-height:normal; }
+.ai-case-popup .video-popup__format { font-size:clamp(20px,2.4vw,36px); line-height:normal; margin-bottom:37px; }
+.ai-case-popup .video-popup__description { margin-top:38px; line-height:normal; }
+.ai-case-popup .video-popup__player::after { content:""; position:absolute; inset:0; z-index:1; border-radius:inherit; background:rgb(0 0 0 / 18%); pointer-events:none; opacity:1; transition:opacity .3s ease; }
+.ai-case-popup .video-popup__player.is-playing::after { opacity:0; }
+@media(max-width:768px) {
+ .ai-project__overlay { padding:16px; }
+ .ai-project__caption { padding:16px 20px; border-radius:20px; font-size:22px; }
+ .ai-case-popup .video-popup__close { top:18px; right:18px; }
+ .ai-case-popup .video-popup__title,.ai-case-popup .video-popup__format { font-size:clamp(20px,4.8vw,30px); margin-bottom:14px; }
+ .ai-case-popup .video-popup__description { margin-top:24px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .ai-project,.ai-project__overlay,.ai-case-popup .video-popup__player::after { transition:none; }
+ .ai-project:hover,.ai-project:focus-visible,.ai-project.is-preview-active { transform:none; }
+}
