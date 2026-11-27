@@ -211,3 +211,8 @@
 .ai-project:hover .ai-project__image { transform:scale(1.02); }
 @media (hover:none) { .ai-project__play { opacity:1; } }
 @media (prefers-reduced-motion:reduce) { .ai-project__image { transition:none; } }
+
+/* Let the hero image continue behind the initially transparent header. */
+.ai-main { padding-top:0; }
+.ai-hero { height:100vh; height:100dvh; }
+.ai-hero__title { top:var(--ai-header-height); }
