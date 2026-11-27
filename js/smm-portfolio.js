@@ -235,7 +235,7 @@
       }
     });
     poster.addEventListener('pointercancel', function () { touchStart = null; });
-    show(0);
+    show(entry.id === 'zapravka' ? 1 : 0);
     // Reserve the tallest title/intro at the current width, including after fonts load.
     // A longer brand name must never move the video frame or the slide controls.
     function reserveHeadingSpace() {
